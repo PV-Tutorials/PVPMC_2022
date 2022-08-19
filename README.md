@@ -1,6 +1,6 @@
 ![tutorialpromo](images/tutorial_banner.PNG)
 
-# pyData 2021 Global - Solar Modeling Tutorial
+# PVPMC 2022 - Solar Modeling Tutorial
 This tutorial focuses on PV computing packages, Python, data wrangling with Pandas, and data viz
 
 ## Tutorial Summary:
@@ -24,7 +24,7 @@ into the tutorial [here](https://pvsc-python-tutorial.eastus.cloudapp.azure.com/
 ### THIS IS A 2-STEP PROCESS
 
 - **STEP 1**: click [this](https://pvsc-python-tutorial.eastus.cloudapp.azure.com/) --> https://pvsc-python-tutorial.eastus.cloudapp.azure.com/
-- **STEP 2**: click [this](https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling&branch=main) --> https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling&branch=main
+- **STEP 2**: click [this](https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/PVPMC_2022&branch=main) --> https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/PVPMC_2022&branch=main
 
 The first time you visit the tutorial, you will need to create an account. Use
 any username and password you like.
@@ -36,10 +36,10 @@ The first time you log into the tutorial, you will only see the scratch and shar
 ![first login](https://user-images.githubusercontent.com/1385621/119912003-5cf66b80-bf0f-11eb-874d-67ba2ff1bb66.png)
 
 After you log in, you need to download the tutorial from this GitHub repository by following this
-[link (step 2)](https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling&branch=main):
+[link (step 2)](https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/PVPMC_2022&branch=main):
 
 You only need to download the repository once, but you can always use either link to start the tutorial during the conference.
-From now on you will see the pyData-2021-Solar-PV-Modeling tutorial folder in the list.
+From now on you will see the PVPMC_2022 tutorial folder in the list.
 
 ![download tutorial](images/readme_step2.PNG)
 
@@ -55,7 +55,7 @@ https://pvsc-python-tutorial.eastus.cloudapp.azure.com/
 
 The full tutorial is now also hosted as a beautiful [Jupyter book](https://jupyterbook.org/intro.html). This book has navigation, search, and can even run code cells interactively. Check it out!
 
-https://pvsc-python-tutorials.github.io/pyData-2021-Solar-PV-Modeling/index.html
+https://pvsc-python-tutorials.github.io/PVPMC_2022/index.html
 
 ### My Binder
 
@@ -63,7 +63,7 @@ After the conference the tutorials will remain available here on GitHub, and you
 the tutorial anytime in [Binder](https://mybinder.org) by clicking the
 following link:
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling/main)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/PVSC-Python-Tutorials/PVPMC_2022/main)
 
 ### Locally
 
@@ -76,7 +76,7 @@ steps:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling.git
+   git clone https://github.com/PVSC-Python-Tutorials/PVPMC_2022.git
    ```
 
 1. Create the environment and install the requirements. The repository includes
@@ -84,8 +84,8 @@ steps:
    this tutorial. To install them using conda run:
 
    ```
-   conda create -n pvsc48 jupyter -c pvlib --file requirements.txt
-   conda activate pvsc48
+   conda create -n pvpmc2022 jupyter -c pvlib --file requirements.txt
+   conda activate pvpmc2022
    ```
 
 1. Start a Jupyter session:
@@ -94,7 +94,7 @@ steps:
    jupyter notebook
    ```
 
-1. Use the file explorer in Jupyter lab to browse to `PVSC48-Python-Tutorial`
+1. Use the file explorer in Jupyter lab to browse to `PVPMC_2022`
    and start the first Tutorial.
 
 
