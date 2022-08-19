@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tutorial 2 - POA Irradiance &#8212; PVSC 48 Python Tutorial</title>
+    <title>Tutorial 2 - POA Irradiance &#8212; PyData 2021: Solar PV Modeling</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorial 3 - Module Temperature" href="Tutorial%203%20-%20Module%20Temperature.html" />
+    <link rel="next" title="Tutorial 3 - Modeling an Array Power" href="Tutorial%203%20-%20Array%20Power.html" />
     <link rel="prev" title="Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!" href="Tutorial%201%20-%20TMY%20Weather%20Data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -97,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/tutorial_banner.PNG" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">PVSC 48 Python Tutorial</h1>
+      <h1 class="site-logo" id="site-title">PyData 2021: Solar PV Modeling</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -108,35 +108,20 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="Tutorial%200%20-%20Overview.html">
-                    Welcome!
+                <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
+                    Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
-   Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Tutorial 2 - POA Irradiance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%203%20-%20Module%20Temperature.html">
-   Tutorial 3 - Module Temperature
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%204%20-%20Model%20a%20Module%27s%20Performance.html">
-   Tutorial 4 - PV Module Performance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%205%20-%20Array%20Power.html">
-   Tutorial 5 - Array Power
+  <a class="reference internal" href="Tutorial%203%20-%20Array%20Power.html">
+   Tutorial 3 - Modeling an Array Power
   </a>
  </li>
  <li class="toctree-l1">
@@ -147,6 +132,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial%20B%20-%20pvfree.html">
    Tutorial B - pvfree
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%20C%20-%20Modeling%20Module%27s%20Performance%20Advanced.html">
+   Tutorial C - PV Module Performance Advanced
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html">
+   6 - pySAM Simulation
   </a>
  </li>
 </ul>
@@ -208,7 +203,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/PVSC-Python-Tutorials/PVSC48-Python-Tutorial/main?urlpath=tree/Tutorial 2 - POA Irradiance.ipynb"
+        <a href="https://mybinder.org/v2/gh/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling/main?urlpath=tree/Tutorial 2 - POA Irradiance.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -226,7 +221,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial&urlpath=tree/PVSC48-Python-Tutorial/Tutorial+2+-+POA+Irradiance.ipynb&branch=main"
+        <a href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling&urlpath=tree/pyData-2021-Solar-PV-Modeling/Tutorial+2+-+POA+Irradiance.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -287,7 +282,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial"
+        <a href="https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -304,7 +299,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial/issues/new?title=Issue%20on%20page%20%2FTutorial 2 - POA Irradiance.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling/issues/new?title=Issue%20on%20page%20%2FTutorial 2 - POA Irradiance.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -823,7 +818,7 @@ title="Print to PDF"
     {
         requestKernel: true,
         binderOptions: {
-            repo: "PVSC-Python-Tutorials/PVSC48-Python-Tutorial",
+            repo: "PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling",
             ref: "main",
         },
         codeMirrorConfig: {
@@ -853,10 +848,10 @@ title="Print to PDF"
             <p class="prev-next-title">Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Tutorial%203%20-%20Module%20Temperature.html" title="next page">
+    <a class='right-next' id="next-link" href="Tutorial%203%20-%20Array%20Power.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorial 3 - Module Temperature</p>
+        <p class="prev-next-title">Tutorial 3 - Modeling an Array Power</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

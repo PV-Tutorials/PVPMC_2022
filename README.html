@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>PVSC48-Python-Tutorial &#8212; PVSC 48 Python Tutorial</title>
+    <title>pyData 2021 Global - Solar Modeling Tutorial &#8212; PyData 2021: Solar PV Modeling</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/tutorial_banner.PNG" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">PVSC 48 Python Tutorial</h1>
+      <h1 class="site-logo" id="site-title">PyData 2021: Solar PV Modeling</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -106,35 +106,20 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="Tutorial%200%20-%20Overview.html">
-                    Welcome!
+                <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
+                    Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
-   Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial%202%20-%20POA%20Irradiance.html">
    Tutorial 2 - POA Irradiance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%203%20-%20Module%20Temperature.html">
-   Tutorial 3 - Module Temperature
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%204%20-%20Model%20a%20Module%27s%20Performance.html">
-   Tutorial 4 - PV Module Performance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%205%20-%20Array%20Power.html">
-   Tutorial 5 - Array Power
+  <a class="reference internal" href="Tutorial%203%20-%20Array%20Power.html">
+   Tutorial 3 - Modeling an Array Power
   </a>
  </li>
  <li class="toctree-l1">
@@ -145,6 +130,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial%20B%20-%20pvfree.html">
    Tutorial B - pvfree
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%20C%20-%20Modeling%20Module%27s%20Performance%20Advanced.html">
+   Tutorial C - PV Module Performance Advanced
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html">
+   6 - pySAM Simulation
   </a>
  </li>
 </ul>
@@ -220,7 +215,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial"
+        <a href="https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -237,7 +232,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -370,7 +365,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>PVSC48-Python-Tutorial</h1>
+                <h1>pyData 2021 Global - Solar Modeling Tutorial</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -428,10 +423,9 @@ title="Print to PDF"
               <div>
                 
   <p><img alt="tutorialpromo" src="_images/tutorial_banner.PNG" /></p>
-<section class="tex2jax_ignore mathjax_ignore" id="pvsc48-python-tutorial">
-<h1>PVSC48-Python-Tutorial<a class="headerlink" href="#pvsc48-python-tutorial" title="Permalink to this headline">#</a></h1>
-<p>PVSC48 computing tutorial with focus on PV computing packages, Python, data
-wrangling with Pandas, and data viz</p>
+<section class="tex2jax_ignore mathjax_ignore" id="pydata-2021-global-solar-modeling-tutorial">
+<h1>pyData 2021 Global - Solar Modeling Tutorial<a class="headerlink" href="#pydata-2021-global-solar-modeling-tutorial" title="Permalink to this headline">#</a></h1>
+<p>This tutorial focuses on PV computing packages, Python, data wrangling with Pandas, and data viz</p>
 <section id="tutorial-summary">
 <h2>Tutorial Summary:<a class="headerlink" href="#tutorial-summary" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -457,7 +451,7 @@ into the tutorial <a class="reference external" href="https://pvsc-python-tutori
 <h3>THIS IS A 2-STEP PROCESS<a class="headerlink" href="#this-is-a-2-step-process" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>STEP 1</strong>: click <a class="reference external" href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/">this</a> –&gt; <a class="reference external" href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/">https://pvsc-python-tutorial.eastus.cloudapp.azure.com/</a></p></li>
-<li><p><strong>STEP 2</strong>: click <a class="reference external" href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial&amp;branch=main">this</a> –&gt; <a class="reference external" href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial&amp;branch=main">https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial&amp;branch=main</a></p></li>
+<li><p><strong>STEP 2</strong>: click <a class="reference external" href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling&amp;branch=main">this</a> –&gt; <a class="reference external" href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling&amp;branch=main">https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling&amp;branch=main</a></p></li>
 </ul>
 <p>The first time you visit the tutorial, you will need to create an account. Use
 any username and password you like.</p>
@@ -465,26 +459,26 @@ any username and password you like.</p>
 <p>The first time you log into the tutorial, you will only see the scratch and shared-data folders.</p>
 <p><img alt="first login" src="https://user-images.githubusercontent.com/1385621/119912003-5cf66b80-bf0f-11eb-874d-67ba2ff1bb66.png" /></p>
 <p>After you log in, you need to download the tutorial from this GitHub repository by following this
-<a class="reference external" href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial&amp;branch=main">link</a>:</p>
+<a class="reference external" href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling&amp;branch=main">link (step 2)</a>:</p>
 <p>You only need to download the repository once, but you can always use either link to start the tutorial during the conference.
-From now on you will see the PVSC48-Python-Tutorial folder in the list.</p>
-<p><img alt="download tutorial" src="https://user-images.githubusercontent.com/1385621/119912192-ce361e80-bf0f-11eb-8f62-36e54509fdcc.png" /></p>
+From now on you will see the pyData-2021-Solar-PV-Modeling tutorial folder in the list.</p>
+<p><img alt="download tutorial" src="_images/readme_step2.PNG" /></p>
 <p>Click the folder to open, and you’ll see the full list. Click <code class="docutils literal notranslate"><span class="pre">Tutorial</span> <span class="pre">0</span> <span class="pre">-</span> <span class="pre">Overview.ipynb</span></code> to get started.</p>
-<p><img alt="full list of tutorials" src="https://user-images.githubusercontent.com/1385621/119912314-15241400-bf10-11eb-8a2c-1fc371e0f4e8.png" /></p>
+<p><img alt="full list of tutorials" src="_images/readme_foldercontents.PNG" /></p>
 <p>Sometimes, if you are idle too long, the tutorial dies. Just click the <a class="reference external" href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/">link to the tutorial</a> again to reconnect.</p>
 <p><a class="reference external" href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/">https://pvsc-python-tutorial.eastus.cloudapp.azure.com/</a></p>
 </section>
 <section id="jupyter-book-docs">
 <h3>Jupyter Book docs<a class="headerlink" href="#jupyter-book-docs" title="Permalink to this headline">#</a></h3>
 <p>The full tutorial is now also hosted as a beautiful <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter book</a>. This book has navigation, search, and can even run code cells interactively. Check it out!</p>
-<p><a class="reference external" href="https://pvsc-python-tutorials.github.io/PVSC48-Python-Tutorial/index.html">https://pvsc-python-tutorials.github.io/PVSC48-Python-Tutorial/index.html</a></p>
+<p><a class="reference external" href="https://pvsc-python-tutorials.github.io/pyData-2021-Solar-PV-Modeling/index.html">https://pvsc-python-tutorials.github.io/pyData-2021-Solar-PV-Modeling/index.html</a></p>
 </section>
 <section id="my-binder">
 <h3>My Binder<a class="headerlink" href="#my-binder" title="Permalink to this headline">#</a></h3>
 <p>After the conference the tutorials will remain available here on GitHub, and you can run
 the tutorial anytime in <a class="reference external" href="https://mybinder.org">Binder</a> by clicking the
 following link:</p>
-<p><a class="reference external" href="https://mybinder.org/v2/gh/PVSC-Python-Tutorials/PVSC48-Python-Tutorial/main"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling/main"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 </section>
 <section id="locally">
 <h3>Locally<a class="headerlink" href="#locally" title="Permalink to this headline">#</a></h3>
@@ -494,7 +488,7 @@ steps:</p>
 <ol>
 <li><p>Install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>.</p></li>
 <li><p>Clone the repository:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">PVSC</span><span class="o">-</span><span class="n">Python</span><span class="o">-</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">PVSC48</span><span class="o">-</span><span class="n">Python</span><span class="o">-</span><span class="n">Tutorial</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">PVSC</span><span class="o">-</span><span class="n">Python</span><span class="o">-</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">pyData</span><span class="o">-</span><span class="mi">2021</span><span class="o">-</span><span class="n">Solar</span><span class="o">-</span><span class="n">PV</span><span class="o">-</span><span class="n">Modeling</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </li>
@@ -526,7 +520,7 @@ and start the first Tutorial.</p></li>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "PVSC-Python-Tutorials/PVSC48-Python-Tutorial",
+            repo: "PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling",
             ref: "main",
         },
         codeMirrorConfig: {

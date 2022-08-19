@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome! &#8212; PVSC 48 Python Tutorial</title>
+    <title>Welcome! &#8212; PyData 2021: Solar PV Modeling</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!" href="Tutorial%201%20-%20TMY%20Weather%20Data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/tutorial_banner.PNG" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">PVSC 48 Python Tutorial</h1>
+      <h1 class="site-logo" id="site-title">PyData 2021: Solar PV Modeling</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -106,36 +105,21 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
-                    Welcome!
+            <li class="toctree-l1">
+                <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
+                    Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
-   Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial%202%20-%20POA%20Irradiance.html">
    Tutorial 2 - POA Irradiance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%203%20-%20Module%20Temperature.html">
-   Tutorial 3 - Module Temperature
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%204%20-%20Model%20a%20Module%27s%20Performance.html">
-   Tutorial 4 - PV Module Performance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial%205%20-%20Array%20Power.html">
-   Tutorial 5 - Array Power
+  <a class="reference internal" href="Tutorial%203%20-%20Array%20Power.html">
+   Tutorial 3 - Modeling an Array Power
   </a>
  </li>
  <li class="toctree-l1">
@@ -146,6 +130,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial%20B%20-%20pvfree.html">
    Tutorial B - pvfree
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%20C%20-%20Modeling%20Module%27s%20Performance%20Advanced.html">
+   Tutorial C - PV Module Performance Advanced
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html">
+   6 - pySAM Simulation
   </a>
  </li>
 </ul>
@@ -207,7 +201,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/PVSC-Python-Tutorials/PVSC48-Python-Tutorial/main?urlpath=tree/Tutorial 0 - Overview.ipynb"
+        <a href="https://mybinder.org/v2/gh/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling/main?urlpath=tree/Tutorial 0 - Overview.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -225,7 +219,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial&urlpath=tree/PVSC48-Python-Tutorial/Tutorial+0+-+Overview.ipynb&branch=main"
+        <a href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling&urlpath=tree/pyData-2021-Solar-PV-Modeling/Tutorial+0+-+Overview.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -286,7 +280,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial"
+        <a href="https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -303,7 +297,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/PVSC-Python-Tutorials/PVSC48-Python-Tutorial/issues/new?title=Issue%20on%20page%20%2FTutorial 0 - Overview.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling/issues/new?title=Issue%20on%20page%20%2FTutorial 0 - Overview.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -620,7 +614,7 @@ title="Print to PDF"
   <p><img alt="tutorial banner" src="_images/tutorial_banner.PNG" /></p>
 <section class="tex2jax_ignore mathjax_ignore" id="welcome">
 <h1>Welcome!<a class="headerlink" href="#welcome" title="Permalink to this headline">#</a></h1>
-<p>Welcome to the  PV Software 101: from Sun position to AC Output! tutorial</p>
+<p>Welcome to the pyData Global 2021 Tutorial: Data and tools to model PV Systems</p>
 <p>Modeling tools for all aspects of photovoltaic systems are rapidly growing, and there are solutions for many of the things you might want to simulate. Python is becoming one of the scientific languages of choice, and many open-source tools are available for PV modeling. This tutorial will focus on teaching attendees PV modeling in python through the use of PVlib.</p>
 <p>In this interactive tutorial we will go from getting acquainted with some common data used or measured in pv systems (i.e. weather), to modeling the AC energy output of a single-axis tracker system. This includes learning and simulating sun position, plane of array irradiances, temperature models, single-diode models and more.</p>
 <p>We will review common vocabulary around python and <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">aggregation</span></code> by hour, week, month, and visualization.</p>
@@ -636,14 +630,17 @@ title="Print to PDF"
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><p><img alt="Silvana Ayala Pelaez" src="_images/tutorial_0_silvana.PNG" /></p></td>
+<td class="text-align:left"><p><h2>Silvana Ayala Pelaez</h2><br/>I am a research scientist at NREL, focusing mostly on bifacial PV system’s performance, and circular economy. Python is my daily bread and butter for data analysis and building tools. Silvana has made substantial contributions to the NREL <a class="reference external" href="https://github.com/NREL/bifacialvf">bifacialvf pvmismatch</a> and <a class="reference external" href="https://bifacial-radiance.readthedocs.io/en/latest/">bifacial radiance</a> software packages.</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="Kevin Anderson" src="_images/tutorial_0_kevin.PNG" /></p></td>
+<td class="text-align:left"><p><h2>Kevin Anderson</h2><br/>I am a research scientist at NREL doing cool stuff! I have contributed to work on slope aware backtracking, clipping loss errors in hourly yield estimates, and am a maintainer for <a class="reference external" href="https://pvlib-python.readthedocs.io/en/latest/">pvlib python</a> and a frequent contributor to <a class="reference external" href="https://rdtools.readthedocs.io/en/latest/">RdTools</a>.</p></td>
+</tr>
 <tr class="row-even"><td><p><img alt="Mark Mikofski" src="_images/tutorial_0_mark.PNG" /></p></td>
 <td class="text-align:left"><p><h2>Mark Mikofski</h2><br/>I am a principal solar engineer at DNV and product manager for SolarFarmer. I research, analyze, and predict PV system performance, degradation, and reliability. I have contributed to a few Python projects like <a class="reference external" href="https://pvlib-python.readthedocs.io/en/latest/">pvlib python</a>, <a class="reference external" href="https://sunpower.github.io/PVMismatch/">PVMismatch</a>, and <a class="reference external" href="https://scipy.org/">SciPy</a></p></td>
 </tr>
-<tr class="row-odd"><td><p><img alt="Silvana Ayala Pelaez" src="_images/tutorial_0_silvana.PNG" /></p></td>
-<td class="text-align:left"><p><h2>Silvana Ayala Pelaez</h2><br/>I am a research scientist at NREL, focusing mostly on bifacial PV system’s performance, and circular economy. Python is my daily bread and butter for data analysis and building tools. Silvana has made substantial contributions to the NREL <a class="reference external" href="https://github.com/NREL/bifacialvf">bifacialvf pvmismatch</a> and <a class="reference external" href="https://bifacial-radiance.readthedocs.io/en/latest/">bifacial radiance</a> software packages.</p></td>
-</tr>
-<tr class="row-even"><td><p><img alt="Kevin Anderson" src="_images/tutorial_0_kevin.PNG" /></p></td>
-<td class="text-align:left"><p><h2>Kevin Anderson</h2><br/>I am a research scientist at NREL doing cool stuff! I have contributed to work on slope aware backtracking, clipping loss errors in hourly yield estimates, and am a maintainer for <a class="reference external" href="https://pvlib-python.readthedocs.io/en/latest/">pvlib python</a> and a frequent contributor to <a class="reference external" href="https://rdtools.readthedocs.io/en/latest/">RdTools</a>.</p></td>
+<tr class="row-odd"><td><p><img alt="Abhishek Parikh" src="_images/tutorial_0_abhishek.PNG" /></p></td>
+<td class="text-align:left"><p><h2>Abhishek Parikh</h2><br/> I am Abhi, a solar analyst at DNV. Like many, I love python and try not to miss any opportunity to deploy it’s terrific power in handling the data challenges renewables analytics offer. I want to promote and be a part of collaborations between the amazing worlds of data science and renewables.</p></td>
 </tr>
 </tbody>
 </table>
@@ -651,10 +648,12 @@ title="Print to PDF"
 <section id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
+<li><p>Why Model PV?</p></li>
 <li><p>Access weather data (TMY3), understand irradiance data, and visualize it monthly.</p></li>
 <li><p>Calculate sun position, plane of array irradiance, and aggregate irradiance data into average daily insolation by month and year.</p></li>
 <li><p>Calculate module temperature from ambient data.</p></li>
 <li><p>Use POA and module temperature to forecast a module’s performance.</p></li>
+<li><p>Other Tools</p></li>
 </ol>
 </section>
 <section id="overview">
@@ -739,7 +738,7 @@ example.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_1719/3863091146.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_1742/3863091146.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">my_string</span> <span class="o">=</span>    <span class="c1"># Add your text here. Remember to put it inside of single quotes or double quotes ( &quot; &quot; or &#39;&#39; )</span>
                                                                                                                   <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -941,15 +940,13 @@ then feel free to explore the rest of the notebooks.</p>
 <p>This work is licensed under a <a class="reference external" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 </section>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "PVSC-Python-Tutorials/PVSC48-Python-Tutorial",
+            repo: "PVSC-Python-Tutorials/pyData-2021-Solar-PV-Modeling",
             ref: "main",
         },
         codeMirrorConfig: {
@@ -972,13 +969,6 @@ then feel free to explore the rest of the notebooks.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="Tutorial%201%20-%20TMY%20Weather%20Data.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
