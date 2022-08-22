@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tutorial 2 - POA Irradiance &#8212; PyData 2021: Solar PV Modeling</title>
+    <title>Tutorial 2 - Modeling POA from GHI, DHI, and DNI &#8212; PyData 2021: Solar PV Modeling</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorial 3 - Modeling an Array Power" href="Tutorial%203%20-%20Array%20Power.html" />
+    <link rel="next" title="Tutorial 3 - Modeling an Array Power with PVWatts" href="Tutorial%203%20-%20Array%20Power.html" />
     <link rel="prev" title="Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!" href="Tutorial%201%20-%20TMY%20Weather%20Data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -116,12 +116,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Tutorial 2 - POA Irradiance
+   Tutorial 2 - Modeling POA from GHI, DHI, and DNI
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial%203%20-%20Array%20Power.html">
-   Tutorial 3 - Modeling an Array Power
+   Tutorial 3 - Modeling an Array Power with PVWatts
   </a>
  </li>
  <li class="toctree-l1">
@@ -387,33 +387,40 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pv-concepts">
-   PV Concepts
+  <a class="reference internal nav-link" href="#steps">
+   Steps:
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pv-concepts">
+     PV Concepts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-concepts">
+     Python Concepts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-transposition">
+     What is transposition?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-is-array-orientation-defined">
+     How is array orientation defined?
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-concepts">
-   Python Concepts
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-transposition">
-   What is transposition?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-is-array-orientation-defined">
-   How is array orientation defined?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modeling-poa-from-ghi-dhi-and-dni">
-   Modeling POA from GHI, DHI, and DNI
+  <a class="reference internal nav-link" href="#calculating-solar-position">
+   1. Calculating Solar Position
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fixed-tilt-poa">
-   Fixed Tilt POA
+   2. Fixed Tilt POA
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -425,7 +432,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modeling-poa-for-a-tracking-system">
-   Modeling POA for a tracking system
+   3. Modeling POA for a tracking system
   </a>
  </li>
 </ul>
@@ -437,7 +444,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tutorial 2 - POA Irradiance</h1>
+                <h1>Tutorial 2 - Modeling POA from GHI, DHI, and DNI</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -448,33 +455,40 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pv-concepts">
-   PV Concepts
+  <a class="reference internal nav-link" href="#steps">
+   Steps:
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pv-concepts">
+     PV Concepts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-concepts">
+     Python Concepts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-transposition">
+     What is transposition?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-is-array-orientation-defined">
+     How is array orientation defined?
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-concepts">
-   Python Concepts
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-transposition">
-   What is transposition?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-is-array-orientation-defined">
-   How is array orientation defined?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modeling-poa-from-ghi-dhi-and-dni">
-   Modeling POA from GHI, DHI, and DNI
+  <a class="reference internal nav-link" href="#calculating-solar-position">
+   1. Calculating Solar Position
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fixed-tilt-poa">
-   Fixed Tilt POA
+   2. Fixed Tilt POA
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -486,7 +500,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modeling-poa-for-a-tracking-system">
-   Modeling POA for a tracking system
+   3. Modeling POA for a tracking system
   </a>
  </li>
 </ul>
@@ -499,13 +513,20 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><img alt="tutorialpromo" src="_images/tutorial_banner.PNG" /></p>
-<section class="tex2jax_ignore mathjax_ignore" id="tutorial-2-poa-irradiance">
-<h1>Tutorial 2 - POA Irradiance<a class="headerlink" href="#tutorial-2-poa-irradiance" title="Permalink to this headline">#</a></h1>
+  <p><img alt="tutorial banner" src="_images/PVLib_PVPMCLogo.PNG" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="tutorial-2-modeling-poa-from-ghi-dhi-and-dni">
+<h1>Tutorial 2 - Modeling POA from GHI, DHI, and DNI<a class="headerlink" href="#tutorial-2-modeling-poa-from-ghi-dhi-and-dni" title="Permalink to this headline">#</a></h1>
 <p>This notebook shows how to use pvlib to transform the three irradiance components (GHI, DHI, and DNI) into POA irradiance, the main driver of a PV system.</p>
 <p><img alt="Overview" src="_images/tutorial_2_overview.PNG" /></p>
+<section id="steps">
+<h2>Steps:<a class="headerlink" href="#steps" title="Permalink to this headline">#</a></h2>
+<ol>
+    <li><a id='step1'>Calculating Solar Position</a></li>
+    <li><a id='step2'>Fixed Tilt POA </a></li>
+    <li><a id='step3'>Modeling POA for a tracking system</a></li>
+</ol>
 <section id="pv-concepts">
-<h2>PV Concepts<a class="headerlink" href="#pv-concepts" title="Permalink to this headline">#</a></h2>
+<h3>PV Concepts<a class="headerlink" href="#pv-concepts" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Plane of Array Irradiance</p></li>
 <li><p>Angle of Incidence</p></li>
@@ -514,7 +535,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="python-concepts">
-<h2>Python Concepts<a class="headerlink" href="#python-concepts" title="Permalink to this headline">#</a></h2>
+<h3>Python Concepts<a class="headerlink" href="#python-concepts" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>pandas Timedelta</p></li>
 <li><p>making a new dataframe from existing columns</p></li>
@@ -523,7 +544,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="what-is-transposition">
-<h2>What is transposition?<a class="headerlink" href="#what-is-transposition" title="Permalink to this headline">#</a></h2>
+<h3>What is transposition?<a class="headerlink" href="#what-is-transposition" title="Permalink to this headline">#</a></h3>
 <p>The amount of sunlight collected by a PV panel depends on how well the panel orientation matches incoming sunlight.  For example, a rooftop array facing West will produce hardly any energy in the morning when the sun is in the East because the panel can only “see” the dim part of the sky away from the sun.</p>
 <p><img alt="Overview" src="_images/t2_solarpanel_directions.PNG" /></p>
 <p>As the sun comes into view and moves towards the center of the panel’s field of view, the panel will collect more and more irradiance.  This concept is what defines plane-of-array irradiance – the amount of sunlight available to be collected at a given panel orientation.  Like the three “basic” irradiance components, POA irradiance is measured in watts per square meter.</p>
@@ -531,16 +552,17 @@ title="Print to PDF"
 <p><img alt="Overview" src="_images/t2_POA.PNG" /></p>
 </section>
 <section id="how-is-array-orientation-defined">
-<h2>How is array orientation defined?<a class="headerlink" href="#how-is-array-orientation-defined" title="Permalink to this headline">#</a></h2>
+<h3>How is array orientation defined?<a class="headerlink" href="#how-is-array-orientation-defined" title="Permalink to this headline">#</a></h3>
 <p>Two parameters define the panel orientation, one that measures the cardinal direction (North, East, South, West), and one that measures how high in the sky the panel faces:</p>
 <ul class="simple">
 <li><p>tilt; measured in degrees from horizontal.  A flat panel is at tilt=0 and a panel standing on its edge has tilt=90.</p></li>
 <li><p>azimuth; measured in degrees from North.  The direction along the horizon the panel is facing.  N=0, E=90, S=180, W=270.</p></li>
 </ul>
 <p>A fixed array has fixed tilt and azimuth, but a tracker array constantly changes its orientation to best match the sun’s position.  So depending on the system configuration, tilt and azimuth may or may not be time series values.</p>
+<a href='#step1'></section>
 </section>
-<section id="modeling-poa-from-ghi-dhi-and-dni">
-<h2>Modeling POA from GHI, DHI, and DNI<a class="headerlink" href="#modeling-poa-from-ghi-dhi-and-dni" title="Permalink to this headline">#</a></h2>
+<section id="calculating-solar-position">
+<h2>1. Calculating Solar Position<a class="headerlink" href="#calculating-solar-position" title="Permalink to this headline">#</a></h2>
 <p>As mentioned earlier, pvlib makes it easy to calculate POA irradiance.  First, let’s load in the example TMY dataset from the previous tutorial:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -672,9 +694,9 @@ title="Print to PDF"
 </div>
 <p>The two values needed here are the solar zenith (how close the sun is to overhead) and azimuth (what direction along the horizon the sun is, like panel azimuth).  The difference between <code class="docutils literal notranslate"><span class="pre">apparent_zenith</span></code> and <code class="docutils literal notranslate"><span class="pre">zenith</span></code> is that <code class="docutils literal notranslate"><span class="pre">apparent_zenith</span></code> includes the effect of atmospheric refraction.</p>
 <p>Now that we have a time series of solar position that matches our irradiance data, let’s run a transposition model using the convenient wrapper function <a class="reference external" href="https://pvlib-python.readthedocs.io/en/latest/generated/pvlib.irradiance.get_total_irradiance.html"><code class="docutils literal notranslate"><span class="pre">pvlib.irradiance.get_total_irradiance</span></code></a>. The more complex transposition models like Perez and Hay Davies require additional weather inputs, so for simplicity we’ll just use the basic <code class="docutils literal notranslate"><span class="pre">isotropic</span></code> model here, which is the default if nothing is passed for <code class="docutils literal notranslate"><span class="pre">model</span></code> keyword argument.  As an example, we’ll model a fixed array tilted south at 20 degrees.</p>
-</section>
+<a href='#step2'></section>
 <section id="fixed-tilt-poa">
-<h2>Fixed Tilt POA<a class="headerlink" href="#fixed-tilt-poa" title="Permalink to this headline">#</a></h2>
+<h2>2. Fixed Tilt POA<a class="headerlink" href="#fixed-tilt-poa" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_poa</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">irradiance</span><span class="o">.</span><span class="n">get_total_irradiance</span><span class="p">(</span>
@@ -722,7 +744,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 2 - POA Irradiance_17_0.png" src="_images/Tutorial 2 - POA Irradiance_17_0.png" />
+<img alt="_images/Tutorial 2 - POA Irradiance_20_0.png" src="_images/Tutorial 2 - POA Irradiance_20_0.png" />
 </div>
 </div>
 <p>This plot shows that, compared with a flat array, a tilted array receives significantly more insolation in the winter.  However, it comes at the cost of slightly less insolation in the summer.  The difference is all about solar position – tilting up from horizontal gives a better match to solar position in winter, when the sun is low in the sky.  However it gives a slightly worse match in summer when the sun is very high in the sky.</p>
@@ -735,7 +757,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 2 - POA Irradiance_19_0.png" src="_images/Tutorial 2 - POA Irradiance_19_0.png" />
+<img alt="_images/Tutorial 2 - POA Irradiance_22_0.png" src="_images/Tutorial 2 - POA Irradiance_22_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -746,14 +768,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 2 - POA Irradiance_20_0.png" src="_images/Tutorial 2 - POA Irradiance_20_0.png" />
+<img alt="_images/Tutorial 2 - POA Irradiance_23_0.png" src="_images/Tutorial 2 - POA Irradiance_23_0.png" />
 </div>
 </div>
 <p>The difference between GHI and POA is of course dependent on the tilt defining POA, but because it also depends on solar position, it varies from location to location.  Luckily, tools like pvlib make it easy to model!</p>
-</section>
+<a href='#step3'></section>
 </section>
 <section id="modeling-poa-for-a-tracking-system">
-<h2>Modeling POA for a tracking system<a class="headerlink" href="#modeling-poa-for-a-tracking-system" title="Permalink to this headline">#</a></h2>
+<h2>3. Modeling POA for a tracking system<a class="headerlink" href="#modeling-poa-for-a-tracking-system" title="Permalink to this headline">#</a></h2>
 <p>The previous section calculated the transposition assuming a fixed array tilt and azimuth.  Now we’ll do the same for a tracking array that follows the sun across the sky.  The most common type of tracking array is what’s called a single-axis tracker (SAT) that rotates from East to West to follow the sun.  We can calculate the time-dependent orientation of a SAT array with pvlib:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -772,7 +794,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 2 - POA Irradiance_22_0.png" src="_images/Tutorial 2 - POA Irradiance_22_0.png" />
+<img alt="_images/Tutorial 2 - POA Irradiance_27_0.png" src="_images/Tutorial 2 - POA Irradiance_27_0.png" />
 </div>
 </div>
 <p>This plot shows a single day of tracker operation.  The y-axis shows the tracker rotation from horizontal, so 0 degrees means the panels are flat.  In the morning, the trackers rotate to negative angles to face East towards the morning sun; in the afternoon they rotate to positive angles to face West towards the evening sun.  In the middle of the day, the trackers are flat because the sun is more or less overhead.</p>
@@ -803,7 +825,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 2 - POA Irradiance_26_0.png" src="_images/Tutorial 2 - POA Irradiance_26_0.png" />
+<img alt="_images/Tutorial 2 - POA Irradiance_31_0.png" src="_images/Tutorial 2 - POA Irradiance_31_0.png" />
 </div>
 </div>
 <p>Notice how different the daily profile is for the tracker array!  This is because the array can tilt steeply East and West to face towards the sun in early morning and late afternoon, meaning the edges of day get much higher irradiance than for a south-facing array.</p>
@@ -851,7 +873,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="Tutorial%203%20-%20Array%20Power.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorial 3 - Modeling an Array Power</p>
+        <p class="prev-next-title">Tutorial 3 - Modeling an Array Power with PVWatts</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
