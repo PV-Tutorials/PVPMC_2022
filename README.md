@@ -4,16 +4,17 @@
 This tutorial focuses on PV computing packages, Python, data wrangling with Pandas, and data viz
 
 ## Tutorial Summary:
-* **Tutorial 0**: Introduction to the tutorial, the lesson plan, and resources (~30 minutes)
-* **Tutorial 1**: Access TMY weather data and visualize monthly irradiance data (~30 minutes)
+* **Tutorial 0**: Introduction to the tutorial, the lesson plan, and resources (~15 minutes)
+* **Tutorial 1**: Access TMY weather data and visualize monthly irradiance data (~20 minutes)
 * **Tutorial 2**: Calculate solar position, plane-of-array irradiance, and
-  visualize average daily insolation (30 minutes)
-* **Tutorial 3**: Estimate module temperature from ambient (~20 minutes)
-* **Tutorial 4**: Use POA irradiance and module temperature to model output power
-  from a single module (~20 minutes)
-* **Tutorial 5**: Combine modules to form strings, calculate inverter efficiency
-  and total array output (~independent study)
+  visualize average daily insolation (20 minutes)
+* **Tutorial 3**: Calculate array temperature and power (~20 minutes)
+
+* **Problem Based Learning 1**: An opportunity to put the learned skills to work in a group setting. (~1 hr?)
+
+Extras:
 * **Tutorials Appendices**: More tutorials on a variety of fun topics (~independent study)
+* **Problem Based Learning 2**: An opportunity to put the learned skills to model the PVPMC 2021 Modeling Round Robin on your own! 
 
 ## Tutorial Setup
 These tutorials are designed to run on [Jupyter](https://jupyter.org), a
