@@ -1,4 +1,4 @@
-![tutorialpromo](images/tutorial_banner.PNG)
+![tutorialpromo](images/PVPMC_2022.png)
 
 # PVPMC 2022 Tutorial
 This tutorial focuses on PV computing packages, Python, data wrangling with Pandas, and data viz
