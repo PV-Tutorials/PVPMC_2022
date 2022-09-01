@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tutorial 3 - Modeling an Array Power with PVWatts" href="Tutorial%203%20-%20Array%20Power.html" />
-    <link rel="prev" title="Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!" href="Tutorial%201%20-%20TMY%20Weather%20Data.html" />
+    <link rel="prev" title="Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it!" href="Tutorial%201%20-%20TMY%20Weather%20Data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -109,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
-                    Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
+                    Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it!
                 </a>
             </li>
         </ul>
@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html">
-   6 - pySAM Simulation
+   Tutorial D (extra) - pySAM Simulation
   </a>
  </li>
 </ul>
@@ -234,6 +234,24 @@ title="Launch on JupyterHub"
     <img src="_static/images/logo_jupyterhub.svg">
   </span>
 <span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/PVSC-Python-Tutorials/PVPMC_2022/blob/main/Tutorial 2 - POA Irradiance.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -559,6 +577,14 @@ title="Print to PDF"
 <li><p>azimuth; measured in degrees from North.  The direction along the horizon the panel is facing.  N=0, E=90, S=180, W=270.</p></li>
 </ul>
 <p>A fixed array has fixed tilt and azimuth, but a tracker array constantly changes its orientation to best match the sun’s position.  So depending on the system configuration, tilt and azimuth may or may not be time series values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if running on google colab, uncomment the next line and execute this cell to install the dependencies and prevent &quot;ModuleNotFoundError&quot; in later cells:</span>
+<span class="c1"># !pip install -r https://raw.githubusercontent.com/PVSC-Python-Tutorials/PVPMC_2022/main/requirements.txt</span>
+</pre></div>
+</div>
+</div>
+</div>
 <a href='#step1'></section>
 </section>
 <section id="calculating-solar-position">
@@ -583,7 +609,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8.1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9.1
 </pre></div>
 </div>
 </div>
@@ -693,7 +719,7 @@ title="Print to PDF"
 </div></div></div>
 </div>
 <p>The two values needed here are the solar zenith (how close the sun is to overhead) and azimuth (what direction along the horizon the sun is, like panel azimuth).  The difference between <code class="docutils literal notranslate"><span class="pre">apparent_zenith</span></code> and <code class="docutils literal notranslate"><span class="pre">zenith</span></code> is that <code class="docutils literal notranslate"><span class="pre">apparent_zenith</span></code> includes the effect of atmospheric refraction.</p>
-<p>Now that we have a time series of solar position that matches our irradiance data, let’s run a transposition model using the convenient wrapper function <a class="reference external" href="https://pvlib-python.readthedocs.io/en/latest/generated/pvlib.irradiance.get_total_irradiance.html"><code class="docutils literal notranslate"><span class="pre">pvlib.irradiance.get_total_irradiance</span></code></a>. The more complex transposition models like Perez and Hay Davies require additional weather inputs, so for simplicity we’ll just use the basic <code class="docutils literal notranslate"><span class="pre">isotropic</span></code> model here, which is the default if nothing is passed for <code class="docutils literal notranslate"><span class="pre">model</span></code> keyword argument.  As an example, we’ll model a fixed array tilted south at 20 degrees.</p>
+<p>Now that we have a time series of solar position that matches our irradiance data, let’s run a transposition model using the convenient wrapper function <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.irradiance.get_total_irradiance.html"><code class="docutils literal notranslate"><span class="pre">pvlib.irradiance.get_total_irradiance</span></code></a>. The more complex transposition models like Perez and Hay Davies require additional weather inputs, so for simplicity we’ll just use the basic <code class="docutils literal notranslate"><span class="pre">isotropic</span></code> model here, which is the default if nothing is passed for <code class="docutils literal notranslate"><span class="pre">model</span></code> keyword argument.  As an example, we’ll model a fixed array tilted south at 20 degrees.</p>
 <a href='#step2'></section>
 <section id="fixed-tilt-poa">
 <h2>2. Fixed Tilt POA<a class="headerlink" href="#fixed-tilt-poa" title="Permalink to this headline">#</a></h2>
@@ -744,7 +770,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 2 - POA Irradiance_20_0.png" src="_images/Tutorial 2 - POA Irradiance_20_0.png" />
+<img alt="_images/Tutorial 2 - POA Irradiance_21_0.png" src="_images/Tutorial 2 - POA Irradiance_21_0.png" />
 </div>
 </div>
 <p>This plot shows that, compared with a flat array, a tilted array receives significantly more insolation in the winter.  However, it comes at the cost of slightly less insolation in the summer.  The difference is all about solar position – tilting up from horizontal gives a better match to solar position in winter, when the sun is low in the sky.  However it gives a slightly worse match in summer when the sun is very high in the sky.</p>
@@ -757,7 +783,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 2 - POA Irradiance_22_0.png" src="_images/Tutorial 2 - POA Irradiance_22_0.png" />
+<img alt="_images/Tutorial 2 - POA Irradiance_23_0.png" src="_images/Tutorial 2 - POA Irradiance_23_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -768,7 +794,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 2 - POA Irradiance_23_0.png" src="_images/Tutorial 2 - POA Irradiance_23_0.png" />
+<img alt="_images/Tutorial 2 - POA Irradiance_24_0.png" src="_images/Tutorial 2 - POA Irradiance_24_0.png" />
 </div>
 </div>
 <p>The difference between GHI and POA is of course dependent on the tilt defining POA, but because it also depends on solar position, it varies from location to location.  Luckily, tools like pvlib make it easy to model!</p>
@@ -794,7 +820,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 2 - POA Irradiance_27_0.png" src="_images/Tutorial 2 - POA Irradiance_27_0.png" />
+<img alt="_images/Tutorial 2 - POA Irradiance_28_0.png" src="_images/Tutorial 2 - POA Irradiance_28_0.png" />
 </div>
 </div>
 <p>This plot shows a single day of tracker operation.  The y-axis shows the tracker rotation from horizontal, so 0 degrees means the panels are flat.  In the morning, the trackers rotate to negative angles to face East towards the morning sun; in the afternoon they rotate to positive angles to face West towards the evening sun.  In the middle of the day, the trackers are flat because the sun is more or less overhead.</p>
@@ -825,7 +851,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 2 - POA Irradiance_31_0.png" src="_images/Tutorial 2 - POA Irradiance_31_0.png" />
+<img alt="_images/Tutorial 2 - POA Irradiance_32_0.png" src="_images/Tutorial 2 - POA Irradiance_32_0.png" />
 </div>
 </div>
 <p>Notice how different the daily profile is for the tracker array!  This is because the array can tilt steeply East and West to face towards the sun in early morning and late afternoon, meaning the edges of day get much higher irradiance than for a south-facing array.</p>
@@ -867,7 +893,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!</p>
+            <p class="prev-next-title">Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it!</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Tutorial%203%20-%20Array%20Power.html" title="next page">

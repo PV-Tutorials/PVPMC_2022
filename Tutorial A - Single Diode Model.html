@@ -109,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
-                    Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
+                    Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it!
                 </a>
             </li>
         </ul>
@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html">
-   6 - pySAM Simulation
+   Tutorial D (extra) - pySAM Simulation
   </a>
  </li>
 </ul>
@@ -234,6 +234,24 @@ title="Launch on JupyterHub"
     <img src="_static/images/logo_jupyterhub.svg">
   </span>
 <span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/PVSC-Python-Tutorials/PVPMC_2022/blob/main/Tutorial A - Single Diode Model.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -441,6 +459,14 @@ title="Print to PDF"
 <p>Let’s put together what we know of modeling POA irradiance and cell temperature and calculate a module’s performance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if running on google colab, uncomment the next line and execute this cell to install the dependencies and prevent &quot;ModuleNotFoundError&quot; in later cells:</span>
+<span class="c1"># !pip install -r https://raw.githubusercontent.com/PVSC-Python-Tutorials/PVPMC_2022/main/requirements.txt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import pvlib and other useful python packages</span>
 <span class="kn">import</span> <span class="nn">pvlib</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -526,7 +552,13 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now we can get some weather, before we used TMY,</span>
 <span class="c1"># now we&#39;ll get some data from PVGIS</span>
-<span class="n">data</span><span class="p">,</span> <span class="n">months</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">iotools</span><span class="o">.</span><span class="n">get_pvgis_tmy</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">LATITUDE</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="n">LONGITUDE</span><span class="p">)</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">months</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">iotools</span><span class="o">.</span><span class="n">get_pvgis_tmy</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="n">LATITUDE</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="n">LONGITUDE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pvlib/iotools/pvgis.py:491: pvlibDeprecationWarning: PVGIS variable names will be renamed to pvlib conventions by default starting in pvlib 0.10.0. Specify map_variables=True to enable that behavior now, or specify map_variables=False to hide this warning.
+  &#39;to hide this warning.&#39;, pvlibDeprecationWarning
 </pre></div>
 </div>
 </div>
@@ -612,7 +644,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial A - Single Diode Model_12_0.png" src="_images/Tutorial A - Single Diode Model_12_0.png" />
+<img alt="_images/Tutorial A - Single Diode Model_13_0.png" src="_images/Tutorial A - Single Diode Model_13_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -651,7 +683,7 @@ title="Print to PDF"
 </section>
 <section id="ac-output">
 <h2>AC Output<a class="headerlink" href="#ac-output" title="Permalink to this headline">#</a></h2>
-<p>The <a class="reference external" href="https://energy.sandia.gov/wp-content/gallery/uploads/Performance-Model-for-Grid-Connected-Photovoltaic-Inverters.pdf">Sandia grid inverter</a> is a convenient model. The coefficients in the NREL SAM library are derived from California Energy Commision (CEC) testing (see <a class="reference external" href="https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists">CEC Solar Equipment List</a>). Use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.inverter.sandia.html"><code class="docutils literal notranslate"><span class="pre">pvlib.inverter.sandia</span></code></a> to calculate AC output given DC voltage and power and the inverter parameters from the NREL SAM library which we downloaded earlier into <code class="docutils literal notranslate"><span class="pre">INVERTER_60K</span></code> for the SMA STP 60kW inverter.</p>
+<p>The <a class="reference external" href="https://energy.sandia.gov/wp-content/gallery/uploads/Performance-Model-for-Grid-Connected-Photovoltaic-Inverters.pdf">Sandia grid inverter</a> is a convenient model. The coefficients in the NREL SAM library are derived from California Energy Commision (CEC) testing (see <a class="reference external" href="https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists">CEC Solar Equipment List</a>). Use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.inverter.sandia.html"><code class="docutils literal notranslate"><span class="pre">pvlib.inverter.sandia</span></code></a> to calculate AC output given DC voltage and power and the inverter parameters from the NREL SAM library which we downloaded earlier into <code class="docutils literal notranslate"><span class="pre">INVERTER_60K</span></code> for the SMA STP 60kW inverter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">EDAILY</span> <span class="o">=</span> <span class="n">mpp</span><span class="o">.</span><span class="n">p_mp</span> <span class="o">*</span> <span class="n">STRING_LENGTH</span> <span class="o">*</span> <span class="n">STRING_COUNT</span>
@@ -682,7 +714,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial A - Single Diode Model_18_0.png" src="_images/Tutorial A - Single Diode Model_18_0.png" />
+<img alt="_images/Tutorial A - Single Diode Model_19_0.png" src="_images/Tutorial A - Single Diode Model_19_0.png" />
 </div>
 </div>
 <p><a class="reference external" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>

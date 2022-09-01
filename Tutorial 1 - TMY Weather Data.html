@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it! &#8212; PVPMC 2022</title>
+    <title>Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it! &#8212; PVPMC 2022</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -110,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
+                    Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it!
                 </a>
             </li>
         </ul>
@@ -142,7 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html">
-   6 - pySAM Simulation
+   Tutorial D (extra) - pySAM Simulation
   </a>
  </li>
 </ul>
@@ -235,6 +235,24 @@ title="Launch on JupyterHub"
     <img src="_static/images/logo_jupyterhub.svg">
   </span>
 <span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/PVSC-Python-Tutorials/PVPMC_2022/blob/main/Tutorial 1 - TMY Weather Data.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -391,12 +409,12 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#steps">
    Steps:
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pv-concepts">
+   PV Concepts:
+  </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pv-concepts">
-     PV Concepts:
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#python-concepts">
      Python Concepts:
@@ -505,7 +523,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nrel-api-key">
-   4. NREL API Key
+   NREL API Key
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -529,7 +547,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!</h1>
+                <h1>Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it!</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -543,12 +561,12 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#steps">
    Steps:
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pv-concepts">
+   PV Concepts:
+  </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pv-concepts">
-     PV Concepts:
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#python-concepts">
      Python Concepts:
@@ -657,7 +675,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nrel-api-key">
-   4. NREL API Key
+   NREL API Key
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -683,32 +701,32 @@ title="Print to PDF"
               <div>
                 
   <p><img alt="tutorial banner" src="_images/PVLib_PVPMCLogo.PNG" /></p>
-<section class="tex2jax_ignore mathjax_ignore" id="tutorial-1-weather-data-accesing-it-understanding-it-visualizing-it">
-<h1>Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!<a class="headerlink" href="#tutorial-1-weather-data-accesing-it-understanding-it-visualizing-it" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="tutorial-1-weather-data-accessing-it-understanding-it-visualizing-it">
+<h1>Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it!<a class="headerlink" href="#tutorial-1-weather-data-accessing-it-understanding-it-visualizing-it" title="Permalink to this headline">#</a></h1>
 <p>This notebook explores a standard type of weather data, the typical meteorological year (TMY), and how to summarize it with Python and <a class="reference external" href="https://pandas.pydata.org/">Pandas</a>.</p>
 <p><img alt="Overview" src="_images/tutorial_1_overview.PNG" /></p>
 <section id="steps">
 <h2>Steps:<a class="headerlink" href="#steps" title="Permalink to this headline">#</a></h2>
-<ol>
-    <li><a id='step1'> Weather data in PV performance models</a></li>
-    <li><a id='step2'> Looking at a sample weather data file</a></li>
-    <li><a id='step3'> Where to get weather data from?</a></li>
-    <li><a id='step4'> Weather data by API </a></li>
-</ol>
+<ul class="simple">
+<li><p>Weather data in PV performance models</p></li>
+<li><p>Looking at a sample weather data file</p></li>
+<li><p>Where to get weather data from?</p></li>
+<li><p>Weather data to API</p></li>
+</ul>
+</section>
 <section id="pv-concepts">
-<h3>PV Concepts:<a class="headerlink" href="#pv-concepts" title="Permalink to this headline">#</a></h3>
+<h2>PV Concepts:<a class="headerlink" href="#pv-concepts" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>TMY</p></li>
 <li><p>GHI, DNI, DHI</p></li>
 <li><p>DryBulb, Wspd</p></li>
 <li><p>Irradiance vs. Insolation</p></li>
 </ul>
-</section>
 <section id="python-concepts">
 <h3>Python Concepts:<a class="headerlink" href="#python-concepts" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Exploring a Pandas dataframe (<code class="docutils literal notranslate"><span class="pre">df</span></code>): <code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">df.head()</span></code>, <code class="docutils literal notranslate"><span class="pre">df.keys()</span></code></p></li>
-<li><p><a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/api.html#io-tools">pvlib input-output tools</a></p></li>
+<li><p><a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/iotools.html">pvlib input-output tools</a></p></li>
 <li><p>Ploting a Pandas dataframe (<code class="docutils literal notranslate"><span class="pre">df</span></code>): <code class="docutils literal notranslate"><span class="pre">df.plot()</span></code></p></li>
 <li><p>Aggregating data in a dataframe (<code class="docutils literal notranslate"><span class="pre">df</span></code>): <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html"><code class="docutils literal notranslate"><span class="pre">df.resample(freq).sum()</span></code></a></p></li>
 <li><p>Pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects"><code class="docutils literal notranslate"><span class="pre">DateOffsets</span></code></a> - shortcuts to set the frequency when resampling</p></li>
@@ -721,7 +739,7 @@ title="Print to PDF"
 <p>Weather and irradiance data are used as input to PV performance models.</p>
 <p><img alt="SRRL" src="_images/tutorial_1_SRRL.PNG" /></p>
 <p>These data are directly measured, derived from measured data, or simulated using a stochastic model.</p>
-<p>If you want to learn more about irradiance data, you can visit the <a class="reference external" href="https://www.pmodwrc.ch/en/world-radiation-center-2/srs/">Solar RAdiometry webpage</a></p>
+<p>If you want to learn more about irradiance data, you can visit the <a class="reference external" href="https://www.pmodwrc.ch/en/world-radiation-center-2/srs/">Solar Radiometry webpage</a></p>
 <section id="typical-meteorological-year">
 <h3>Typical Meteorological Year<a class="headerlink" href="#typical-meteorological-year" title="Permalink to this headline">#</a></h3>
 <p>TMY datasets are intended to represent the weather for a typical year at a given location.</p>
@@ -730,6 +748,14 @@ title="Print to PDF"
 <p>TMY datasets are created by selecting individual months out of an extended period of weather measurememts (say, 20 years of data) to construct a single year’s worth of data. There are several methods for selecting which months to include, but the general idea is to calculate monthly summary statistics and take the month that lies in the middle of the distribution.  For example, no two Januaries will be exactly the same, so summing the total solar irradiance for each January will give a <a class="reference external" href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a>, and the month that falls closest to the <a class="reference external" href="https://en.wikipedia.org/wiki/Median">median</a> is chosen as the representative month. The same process is followed for February, March, and so on, and all twelve representative months are stitched together into a year-long dataset.</p>
 <p>The oldest TMYs were calculated using data from the nearest weather station (airports and such). Today, it’s common to use TMYs calculated using simulated weather data from satellite imagery because of the improved spatial resolution.</p>
 <p>To get a better feel for TMY data, we’ll first explore an example TMY dataset that is bundled with pvlib.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if running on google colab, uncomment the next line and execute this cell to install the dependencies and prevent &quot;ModuleNotFoundError&quot; in later cells:</span>
+<span class="c1"># !pip install -r https://raw.githubusercontent.com/PVSC-Python-Tutorials/PVPMC_2022/main/requirements.txt</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="first-step-import-libraries">
 <h3>First Step: Import Libraries<a class="headerlink" href="#first-step-import-libraries" title="Permalink to this headline">#</a></h3>
@@ -759,7 +785,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8.1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9.1
 </pre></div>
 </div>
 </div>
@@ -767,7 +793,7 @@ title="Print to PDF"
 </section>
 <section id="reading-a-tmy-dataset-with-pvlib">
 <h3>Reading a TMY dataset with pvlib<a class="headerlink" href="#reading-a-tmy-dataset-with-pvlib" title="Permalink to this headline">#</a></h3>
-<p>First, we’ll read the TMY dataset with <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.read_tmy3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_tmy3()</span></code></a> which returns a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">Pandas DataFrame</a> of the timeseries weather data and a second output with a Python dictionary of the TMY metadata like longitude, latitude, elevation, etc.</p>
+<p>First, we’ll read the TMY dataset with <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.read_tmy3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_tmy3()</span></code></a> which returns a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">Pandas DataFrame</a> of the timeseries weather data and a second output with a Python dictionary of the TMY metadata like longitude, latitude, elevation, etc.</p>
 <p>We will use the Python <a class="reference external" href="https://docs.python.org/3/library/pathlib.html"><code class="docutils literal notranslate"><span class="pre">pathlib</span></code></a> to get the path to the <code class="docutils literal notranslate"><span class="pre">'data'</span></code> directory which comes with the <code class="docutils literal notranslate"><span class="pre">pvlib</span></code> package. Then we can use the slash operator, <code class="docutils literal notranslate"><span class="pre">/</span></code> to make the full path to the TMY file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1364,7 +1390,7 @@ Number of columns: 71
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 1 - TMY Weather Data_31_0.png" src="_images/Tutorial 1 - TMY Weather Data_31_0.png" />
+<img alt="_images/Tutorial 1 - TMY Weather Data_32_0.png" src="_images/Tutorial 1 - TMY Weather Data_32_0.png" />
 </div>
 </div>
 <p>Let’s control the parameters a bit more</p>
@@ -1379,7 +1405,7 @@ Number of columns: 71
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 1 - TMY Weather Data_33_0.png" src="_images/Tutorial 1 - TMY Weather Data_33_0.png" />
+<img alt="_images/Tutorial 1 - TMY Weather Data_34_0.png" src="_images/Tutorial 1 - TMY Weather Data_34_0.png" />
 </div>
 </div>
 <section id="exercise">
@@ -1411,7 +1437,7 @@ plt.ylabel(‘Irradiance [W/m<span class="math notranslate nohighlight">\(^2\)</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 1 - TMY Weather Data_40_0.png" src="_images/Tutorial 1 - TMY Weather Data_40_0.png" />
+<img alt="_images/Tutorial 1 - TMY Weather Data_41_0.png" src="_images/Tutorial 1 - TMY Weather Data_41_0.png" />
 </div>
 </div>
 </section>
@@ -1427,7 +1453,7 @@ plt.ylabel(‘Irradiance [W/m<span class="math notranslate nohighlight">\(^2\)</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 1 - TMY Weather Data_42_0.png" src="_images/Tutorial 1 - TMY Weather Data_42_0.png" />
+<img alt="_images/Tutorial 1 - TMY Weather Data_43_0.png" src="_images/Tutorial 1 - TMY Weather Data_43_0.png" />
 </div>
 </div>
 </section>
@@ -1442,7 +1468,7 @@ plt.ylabel(‘Irradiance [W/m<span class="math notranslate nohighlight">\(^2\)</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 1 - TMY Weather Data_44_0.png" src="_images/Tutorial 1 - TMY Weather Data_44_0.png" />
+<img alt="_images/Tutorial 1 - TMY Weather Data_45_0.png" src="_images/Tutorial 1 - TMY Weather Data_45_0.png" />
 </div>
 </div>
 </section>
@@ -1476,7 +1502,7 @@ Freq: M, Name: GHI, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 1 - TMY Weather Data_47_0.png" src="_images/Tutorial 1 - TMY Weather Data_47_0.png" />
+<img alt="_images/Tutorial 1 - TMY Weather Data_48_0.png" src="_images/Tutorial 1 - TMY Weather Data_48_0.png" />
 </div>
 </div>
 <p>We can also take monthly averages instead of monthly sums:</p>
@@ -1495,7 +1521,7 @@ Freq: M, Name: GHI, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial 1 - TMY Weather Data_49_0.png" src="_images/Tutorial 1 - TMY Weather Data_49_0.png" />
+<img alt="_images/Tutorial 1 - TMY Weather Data_50_0.png" src="_images/Tutorial 1 - TMY Weather Data_50_0.png" />
 </div>
 </div>
 </section>
@@ -1526,8 +1552,8 @@ Freq: M, Name: GHI, dtype: int64
 <ul class="simple">
 <li><p><a class="reference external" href="https://nsrdb.nrel.gov/data-sets/archives.html">TMY3/TMY2</a> - like the data we loaded earlier on this example. This database of TMY3 <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files and TMY2 files have been archived by NREL.</p></li>
 <li><p><a class="reference external" href="https://maps.nrel.gov/nsrdb-viewer/">NSRDB</a> - National Solar Radiation Database. You can access data through the website for many locations accross the world, or you can use their <a class="reference external" href="https://developer.nrel.gov/docs/solar/nsrdb/">web API</a> to download data programmatically. An “API” is an <a class="reference external" href="https://en.wikipedia.org/wiki/API">“application programming interface”</a>, and a “web API” is a programming interface that allows you to write code to interact with web services like the NSRDB.</p></li>
-<li><p><a class="reference external" href="https://www.energy.gov/eere/buildings/downloads/energyplus-0">EPW</a> - Energy Plus Weather data is available for many locations accross the world. It’s in its own format file (‘EPW’) so you can’t open it easily in a spreadsheet program like Excel, but you can use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.read_epw.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_epw()</span></code></a> to get it into a dataframe and use it.</p></li>
-<li><p><a class="reference external" href="https://ec.europa.eu/jrc/en/pvgis">PVGIS</a> - Free global weather data provided by the European Union and derived from many govermental agencies including the NSRDB. PVGIS also provides a web API. You can get PVGIS TMY data using <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.get_pvgis_tmy.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_pvgis_tmy()</span></code></a>.</p></li>
+<li><p><a class="reference external" href="https://www.energy.gov/eere/buildings/downloads/energyplus-0">EPW</a> - Energy Plus Weather data is available for many locations accross the world. It’s in its own format file (‘EPW’) so you can’t open it easily in a spreadsheet program like Excel, but you can use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.read_epw.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_epw()</span></code></a> to get it into a dataframe and use it.</p></li>
+<li><p><a class="reference external" href="https://ec.europa.eu/jrc/en/pvgis">PVGIS</a> - Free global weather data provided by the European Union and derived from many govermental agencies including the NSRDB. PVGIS also provides a web API. You can get PVGIS TMY data using <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.get_pvgis_tmy.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_pvgis_tmy()</span></code></a>.</p></li>
 <li><p>Perhaps another useful link: <a class="reference external" href="https://sam.nrel.gov/weather-data.html">https://sam.nrel.gov/weather-data.html</a></p></li>
 </ul>
 <section id="where-else-can-you-get-historical-irradiance-data">
@@ -1541,11 +1567,11 @@ Freq: M, Name: GHI, dtype: int64
 <li><p><a class="reference external" href="https://src.dnvgl.com/">DNV Solar Resource Compass</a></p></li>
 </ul>
 <p><img alt="NSRDB Example" src="_images/tutorial_1_NSRDB_example.PNG" /></p>
-<a id='step4'></section>
+</section>
 </section>
 <section id="nrel-api-key">
-<h2>4. NREL API Key<a class="headerlink" href="#nrel-api-key" title="Permalink to this headline">#</a></h2>
-<p>At the <a class="reference external" href="https://developer.nrel.gov/">NREL Developer Network</a>, there are <a class="reference external" href="https://en.wikipedia.org/wiki/API">APIs</a> to a lot of valuable <a class="reference external" href="https://developer.nrel.gov/docs/solar/">solar resources</a> like <a class="reference external" href="https://developer.nrel.gov/docs/solar/nsrdb/">weather data from the NSRDB</a>, <a class="reference external" href="https://developer.nrel.gov/docs/solar/pvdaq-v3/">operational data from PVDAQ</a>, or indicative calculations using <a class="reference external" href="https://developer.nrel.gov/docs/solar/pvwatts/">PVWatts</a>. In order to use these resources from NREL, you need to <a class="reference external" href="https://developer.nrel.gov/signup/">register for a free API key</a>. You can test out the APIs using the <code class="docutils literal notranslate"><span class="pre">DEMO_KEY</span></code> but it has limited bandwidth compared to the <a class="reference external" href="https://developer.nrel.gov/docs/rate-limits/">usage limit for registered users</a>. NREL has some <a class="reference external" href="https://developer.nrel.gov/docs/api-key/">API usage instructions</a>, but pvlib has a few builtin functions, like <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.get_psm3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code></a>, that wrap the NREL API, and call them for you to make it much easier to use. Skip ahead to the next section to learn more. But before you do…</p>
+<h2>NREL API Key<a class="headerlink" href="#nrel-api-key" title="Permalink to this headline">#</a></h2>
+<p>At the <a class="reference external" href="https://developer.nrel.gov/">NREL Developer Network</a>, there are <a class="reference external" href="https://en.wikipedia.org/wiki/API">APIs</a> to a lot of valuable <a class="reference external" href="https://developer.nrel.gov/docs/solar/">solar resources</a> like <a class="reference external" href="https://developer.nrel.gov/docs/solar/nsrdb/">weather data from the NSRDB</a>, <a class="reference external" href="https://developer.nrel.gov/docs/solar/pvdaq-v3/">operational data from PVDAQ</a>, or indicative calculations using <a class="reference external" href="https://developer.nrel.gov/docs/solar/pvwatts/">PVWatts</a>. In order to use these resources from NREL, you need to <a class="reference external" href="https://developer.nrel.gov/signup/">register for a free API key</a>. You can test out the APIs using the <code class="docutils literal notranslate"><span class="pre">DEMO_KEY</span></code> but it has limited bandwidth compared to the <a class="reference external" href="https://developer.nrel.gov/docs/rate-limits/">usage limit for registered users</a>. NREL has some <a class="reference external" href="https://developer.nrel.gov/docs/api-key/">API usage instructions</a>, but pvlib has a few builtin functions, like <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.get_psm3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code></a>, that wrap the NREL API, and call them for you to make it much easier to use. Skip ahead to the next section to learn more. But before you do…</p>
 <p><strong>Please pause now to visit <a class="reference external" href="https://developer.nrel.gov/signup/">https://developer.nrel.gov/signup/</a> and get an API key.</strong></p>
 <section id="application-programming-interface-api">
 <h3>Application Programming Interface (API)<a class="headerlink" href="#application-programming-interface-api" title="Permalink to this headline">#</a></h3>
@@ -1575,15 +1601,48 @@ Freq: M, Name: GHI, dtype: int64
 </section>
 <section id="fetching-tmys-from-the-nsrdb">
 <h2>Fetching TMYs from the NSRDB<a class="headerlink" href="#fetching-tmys-from-the-nsrdb" title="Permalink to this headline">#</a></h2>
-<p>The example TMY dataset used here is from an airport in North Carolina, but what if we wanted to model a PV system somewhere else? The NSRDB, one of many sources of weather data intended for PV modeling, is free and easy to access using pvlib. As an example, we’ll fetch a TMY dataset for Albuquerque, New Mexico at coordinates <a class="reference external" href="https://www.google.com/maps/&#64;35.0844,-106.6504,9z">(35.0844, -106.6504)</a>. We use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.get_psm3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code></a> which returns a Python dictionary of metadata and a Pandas dataframe of the timeseries weather data.</p>
+<p>The example TMY dataset used here is from an airport in North Carolina, but what if we wanted to model a PV system somewhere else? The NSRDB, one of many sources of weather data intended for PV modeling, is free and easy to access using pvlib. As an example, we’ll fetch a TMY dataset for Albuquerque, New Mexico at coordinates <a class="reference external" href="https://www.google.com/maps/&#64;35.0844,-106.6504,9z">(35.0844, -106.6504)</a>. We use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.get_psm3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code></a> which returns a Python dictionary of metadata and a Pandas dataframe of the timeseries weather data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_abq</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">iotools</span><span class="o">.</span><span class="n">get_psm3</span><span class="p">(</span>
     <span class="n">latitude</span><span class="o">=</span><span class="mf">35.0844</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">106.6504</span><span class="p">,</span>
     <span class="n">api_key</span><span class="o">=</span><span class="n">NREL_API_KEY</span><span class="p">,</span>
     <span class="n">email</span><span class="o">=</span><span class="s1">&#39;mark.mikofski@dnv.com&#39;</span><span class="p">,</span>  <span class="c1"># &lt;-- any email works here fine</span>
-    <span class="n">names</span><span class="o">=</span><span class="s1">&#39;tmy&#39;</span><span class="p">)</span>
+    <span class="n">names</span><span class="o">=</span><span class="s1">&#39;tmy&#39;</span><span class="p">,</span>
+    <span class="n">map_variables</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">metadata</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Source&#39;: &#39;NSRDB&#39;,
+ &#39;Location ID&#39;: &#39;94139&#39;,
+ &#39;City&#39;: &#39;-&#39;,
+ &#39;State&#39;: &#39;-&#39;,
+ &#39;Country&#39;: &#39;-&#39;,
+ &#39;Time Zone&#39;: -7,
+ &#39;Local Time Zone&#39;: -7,
+ &#39;Dew Point Units&#39;: &#39;c&#39;,
+ &#39;DHI Units&#39;: &#39;w/m2&#39;,
+ &#39;DNI Units&#39;: &#39;w/m2&#39;,
+ &#39;GHI Units&#39;: &#39;w/m2&#39;,
+ &#39;Temperature Units&#39;: &#39;c&#39;,
+ &#39;Pressure Units&#39;: &#39;mbar&#39;,
+ &#39;Wind Direction Units&#39;: &#39;Degrees&#39;,
+ &#39;Wind Speed Units&#39;: &#39;m/s&#39;,
+ &#39;Surface Albedo Units&#39;: &#39;N/A&#39;,
+ &#39;Version&#39;: &#39;3.2.0&#39;,
+ &#39;latitude&#39;: 35.09,
+ &#39;longitude&#39;: -106.66,
+ &#39;altitude&#39;: 1496}
+</pre></div>
+</div>
+</div>
+</div>
+<p>TMY datasets from the PSM3 service of the NSRDB are timestamped using the real year that the measurements came from. The <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.read_tmy3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_tmy3()</span></code></a> function had a <code class="docutils literal notranslate"><span class="pre">coerce_year</span></code> argument to force everything to align to a single dummy year, but <code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code> doesn’t have that feature. For convenience let’s standardize the data to 1990 and then compare monthly GHI to the North Carolina location:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_abq</span>
 </pre></div>
 </div>
 </div>
@@ -1611,15 +1670,15 @@ Freq: M, Name: GHI, dtype: int64
       <th>Day</th>
       <th>Hour</th>
       <th>Minute</th>
-      <th>Temperature</th>
+      <th>ghi</th>
+      <th>wind_direction</th>
+      <th>dhi</th>
+      <th>temp_air</th>
+      <th>pressure</th>
+      <th>wind_speed</th>
+      <th>dni</th>
       <th>Dew Point</th>
-      <th>DHI</th>
-      <th>DNI</th>
-      <th>GHI</th>
-      <th>Surface Albedo</th>
-      <th>Pressure</th>
-      <th>Wind Direction</th>
-      <th>Wind Speed</th>
+      <th>albedo</th>
     </tr>
   </thead>
   <tbody>
@@ -1630,15 +1689,15 @@ Freq: M, Name: GHI, dtype: int64
       <td>1</td>
       <td>0</td>
       <td>30</td>
-      <td>-2.6</td>
-      <td>-8.8</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>845.0</td>
       <td>324.0</td>
+      <td>0.0</td>
+      <td>-2.6</td>
+      <td>845.0</td>
       <td>1.6</td>
+      <td>0.0</td>
+      <td>-8.8</td>
+      <td>0.17</td>
     </tr>
     <tr>
       <th>2020-01-01 01:30:00-07:00</th>
@@ -1647,15 +1706,15 @@ Freq: M, Name: GHI, dtype: int64
       <td>1</td>
       <td>1</td>
       <td>30</td>
-      <td>-3.0</td>
-      <td>-9.1</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>845.0</td>
       <td>327.0</td>
+      <td>0.0</td>
+      <td>-3.0</td>
+      <td>845.0</td>
       <td>1.5</td>
+      <td>0.0</td>
+      <td>-9.1</td>
+      <td>0.17</td>
     </tr>
     <tr>
       <th>2020-01-01 02:30:00-07:00</th>
@@ -1664,15 +1723,15 @@ Freq: M, Name: GHI, dtype: int64
       <td>1</td>
       <td>2</td>
       <td>30</td>
-      <td>-3.4</td>
-      <td>-9.4</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>844.0</td>
       <td>333.0</td>
+      <td>0.0</td>
+      <td>-3.4</td>
+      <td>844.0</td>
       <td>1.4</td>
+      <td>0.0</td>
+      <td>-9.4</td>
+      <td>0.17</td>
     </tr>
     <tr>
       <th>2020-01-01 03:30:00-07:00</th>
@@ -1681,15 +1740,15 @@ Freq: M, Name: GHI, dtype: int64
       <td>1</td>
       <td>3</td>
       <td>30</td>
-      <td>-3.8</td>
-      <td>-9.7</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>844.0</td>
       <td>336.0</td>
+      <td>0.0</td>
+      <td>-3.8</td>
+      <td>844.0</td>
       <td>1.4</td>
+      <td>0.0</td>
+      <td>-9.7</td>
+      <td>0.17</td>
     </tr>
     <tr>
       <th>2020-01-01 04:30:00-07:00</th>
@@ -1698,15 +1757,15 @@ Freq: M, Name: GHI, dtype: int64
       <td>1</td>
       <td>4</td>
       <td>30</td>
-      <td>-4.1</td>
-      <td>-9.8</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>844.0</td>
       <td>334.0</td>
+      <td>0.0</td>
+      <td>-4.1</td>
+      <td>844.0</td>
       <td>1.3</td>
+      <td>0.0</td>
+      <td>-9.8</td>
+      <td>0.17</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1732,15 +1791,15 @@ Freq: M, Name: GHI, dtype: int64
       <td>31</td>
       <td>19</td>
       <td>30</td>
-      <td>-0.7</td>
-      <td>-7.9</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>846.0</td>
       <td>329.0</td>
+      <td>0.0</td>
+      <td>-0.7</td>
+      <td>846.0</td>
       <td>1.4</td>
+      <td>0.0</td>
+      <td>-7.9</td>
+      <td>0.17</td>
     </tr>
     <tr>
       <th>2012-12-31 20:30:00-07:00</th>
@@ -1749,15 +1808,15 @@ Freq: M, Name: GHI, dtype: int64
       <td>31</td>
       <td>20</td>
       <td>30</td>
-      <td>-1.3</td>
-      <td>-8.0</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>846.0</td>
       <td>333.0</td>
+      <td>0.0</td>
+      <td>-1.3</td>
+      <td>846.0</td>
       <td>1.4</td>
+      <td>0.0</td>
+      <td>-8.0</td>
+      <td>0.17</td>
     </tr>
     <tr>
       <th>2012-12-31 21:30:00-07:00</th>
@@ -1766,15 +1825,15 @@ Freq: M, Name: GHI, dtype: int64
       <td>31</td>
       <td>21</td>
       <td>30</td>
-      <td>-1.7</td>
-      <td>-8.2</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>846.0</td>
       <td>330.0</td>
+      <td>0.0</td>
+      <td>-1.7</td>
+      <td>846.0</td>
       <td>1.4</td>
+      <td>0.0</td>
+      <td>-8.2</td>
+      <td>0.17</td>
     </tr>
     <tr>
       <th>2012-12-31 22:30:00-07:00</th>
@@ -1783,15 +1842,15 @@ Freq: M, Name: GHI, dtype: int64
       <td>31</td>
       <td>22</td>
       <td>30</td>
-      <td>-1.9</td>
-      <td>-8.4</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>846.0</td>
       <td>326.0</td>
+      <td>0.0</td>
+      <td>-1.9</td>
+      <td>846.0</td>
       <td>1.5</td>
+      <td>0.0</td>
+      <td>-8.4</td>
+      <td>0.17</td>
     </tr>
     <tr>
       <th>2012-12-31 23:30:00-07:00</th>
@@ -1800,52 +1859,20 @@ Freq: M, Name: GHI, dtype: int64
       <td>31</td>
       <td>23</td>
       <td>30</td>
-      <td>-2.2</td>
-      <td>-8.6</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>846.0</td>
       <td>324.0</td>
+      <td>0.0</td>
+      <td>-2.2</td>
+      <td>846.0</td>
       <td>1.5</td>
+      <td>0.0</td>
+      <td>-8.6</td>
+      <td>0.17</td>
     </tr>
   </tbody>
 </table>
 <p>8760 rows × 14 columns</p>
 </div></div></div>
-</div>
-<p>TMY datasets from the PSM3 service of the NSRDB are timestamped using the real year that the measurements came from. The <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.read_tmy3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_tmy3()</span></code></a> function had a <code class="docutils literal notranslate"><span class="pre">coerce_year</span></code> argument to force everything to align to a single dummy year, but <code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code> doesn’t have that feature. For convenience let’s standardize the data to 1990 and then compare monthly GHI to the North Carolina location:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_abq</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Source&#39;: &#39;NSRDB&#39;,
- &#39;Location ID&#39;: &#39;94139&#39;,
- &#39;City&#39;: &#39;-&#39;,
- &#39;State&#39;: &#39;-&#39;,
- &#39;Country&#39;: &#39;-&#39;,
- &#39;Latitude&#39;: 35.09,
- &#39;Longitude&#39;: -106.66,
- &#39;Time Zone&#39;: -7,
- &#39;Elevation&#39;: 1496,
- &#39;Local Time Zone&#39;: -7,
- &#39;Dew Point Units&#39;: &#39;c&#39;,
- &#39;DHI Units&#39;: &#39;w/m2&#39;,
- &#39;DNI Units&#39;: &#39;w/m2&#39;,
- &#39;GHI Units&#39;: &#39;w/m2&#39;,
- &#39;Temperature Units&#39;: &#39;c&#39;,
- &#39;Pressure Units&#39;: &#39;mbar&#39;,
- &#39;Wind Direction Units&#39;: &#39;Degrees&#39;,
- &#39;Wind Speed Units&#39;: &#39;m/s&#39;,
- &#39;Surface Albedo Units&#39;: &#39;N/A&#39;,
- &#39;Version&#39;: &#39;3.2.0&#39;}
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1854,7 +1881,7 @@ Freq: M, Name: GHI, dtype: int64
 
 <span class="n">ghi_comparison</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s1">&#39;NC&#39;</span><span class="p">:</span> <span class="n">monthly_ghi</span><span class="p">,</span>  <span class="c1"># using the monthly values from earlier</span>
-    <span class="s1">&#39;NM&#39;</span><span class="p">:</span> <span class="n">df_abq</span><span class="p">[</span><span class="s1">&#39;GHI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+    <span class="s1">&#39;NM&#39;</span><span class="p">:</span> <span class="n">df_abq</span><span class="p">[</span><span class="s1">&#39;ghi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
 <span class="p">})</span>
 
 <span class="n">ghi_comparison</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
@@ -1863,18 +1890,7 @@ Freq: M, Name: GHI, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1776</span><span class="o">/</span><span class="mf">1260554605.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">df_abq</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1990</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df_abq</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_abq</span><span class="p">[[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Hour&#39;</span><span class="p">]])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ghi_comparison</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s1">&#39;NC&#39;</span><span class="p">:</span> <span class="n">monthly_ghi</span><span class="p">,</span>  <span class="c1"># using the monthly values from earlier</span>
-
-<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
-</pre></div>
-</div>
+<img alt="_images/Tutorial 1 - TMY Weather Data_62_0.png" src="_images/Tutorial 1 - TMY Weather Data_62_0.png" />
 </div>
 </div>
 <p>It’s not too surprising to see that our New Mexico location is significantly sunnier than the one in North Carolina.</p>

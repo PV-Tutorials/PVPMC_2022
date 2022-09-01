@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6 - pySAM Simulation &#8212; PVPMC 2022</title>
+    <title>Tutorial D (extra) - pySAM Simulation &#8212; PVPMC 2022</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -108,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
-                    Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
+                    Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it!
                 </a>
             </li>
         </ul>
@@ -140,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   6 - pySAM Simulation
+   Tutorial D (extra) - pySAM Simulation
   </a>
  </li>
 </ul>
@@ -233,6 +233,24 @@ title="Launch on JupyterHub"
     <img src="_static/images/logo_jupyterhub.svg">
   </span>
 <span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/PVSC-Python-Tutorials/PVPMC_2022/blob/main/Tutorial D - pySAM Modeling the Bifacial Tracker Field at NREL.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -387,8 +405,15 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   6 - pySAM Simulation
+   Tutorial D (extra) - pySAM Simulation
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps">
+     STEPS:
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-default-pv">
@@ -458,7 +483,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>6 - pySAM Simulation</h1>
+                <h1>Tutorial D (extra) - pySAM Simulation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -470,8 +495,15 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   6 - pySAM Simulation
+   Tutorial D (extra) - pySAM Simulation
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps">
+     STEPS:
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-default-pv">
@@ -542,17 +574,32 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="pysam-simulation">
-<h1>6 - pySAM Simulation<a class="headerlink" href="#pysam-simulation" title="Permalink to this headline">#</a></h1>
+  <p><img alt="tutorial banner" src="_images/PVLib_PVPMCLogo.PNG" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="tutorial-d-extra-pysam-simulation">
+<h1>Tutorial D (extra) - pySAM Simulation<a class="headerlink" href="#tutorial-d-extra-pysam-simulation" title="Permalink to this headline">#</a></h1>
+<p>This is only one way to interact with SAM through locally definning ALL the necessary variables and dictionaries natively on the pySAM, and then executing the simulation. <a class="reference external" href="https://sam.nrel.gov/software-development-kit-sdk/pysam.html">SAM’s webinars</a> offer more accessible alternatives, where you create your system on the GUI, export the values as a JSON, and modify/run simulations based on that.</p>
+<div class="alert alert-block alert-warning">
+<b>Note:</b> At time of writing, this notebook may fail to execute successfully due to an unknown issue with PySAM.  We hope to resolve this issue in the future.
+</div>
+<section id="steps">
+<h2>STEPS:<a class="headerlink" href="#steps" title="Permalink to this headline">#</a></h2>
 <ol>
     <li> <a href='#step1'> Create default PV </a></li>
-    <li> <a href='#step2'> Set values that should not be default to represent our system </a></li>
+    <li> <a href='#step2'> Modify default values </a></li>
     <li> <a href='#step3'> Assign Solar Resource </a></li>
     <li> <a href='#step4'> Obtaining the MODULE Data </a></li>
     <ul> <li> <a href='#step4a'> Get File through PVLib </a></li>
         <li> <a href='#step4b'> Get File from the SAM repository URL </a></li></ul>
     <li> <a href='#step5'> Run, Save and Explore Outputs </a></li>
     </ol> <li> <a href='#stepExtra1'> Extra: Comparison of pySAM Default vs SAM GUI exported values </a></li>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if running on google colab, uncomment the next line and execute this cell to install the dependencies and prevent &quot;ModuleNotFoundError&quot; in later cells:</span>
+<span class="c1"># !pip install -r https://raw.githubusercontent.com/PVSC-Python-Tutorials/PVPMC_2022/main/requirements.txt</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datafolder</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;data&#39;</span>
@@ -588,6 +635,7 @@ title="Print to PDF"
 </div>
 </div>
 <p><a id='step1'></a></p>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="create-default-pv">
 <h1>1. Create default PV<a class="headerlink" href="#create-default-pv" title="Permalink to this headline">#</a></h1>
@@ -8794,7 +8842,7 @@ title="Print to PDF"
 <h1>2.  Set values that should not be default to represent our system:<a class="headerlink" href="#set-values-that-should-not-be-default-to-represent-our-system" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solar_resource_file</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;data/SAM Downloaded Weather Files/SRRL_WeatherFile_SAM_60_2020.csv&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solar_resource_file</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;data/SRRL_WeatherFile_SAM_60_2020.csv&#39;</span>
 <span class="n">albedo</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.20000000298023224</span><span class="p">,</span> <span class="mf">0.20000000298023224</span><span class="p">,</span> <span class="mf">0.20000000298023224</span><span class="p">,</span> <span class="mf">0.20000000298023224</span><span class="p">,</span> <span class="mf">0.20000000298023224</span><span class="p">,</span> <span class="mf">0.20000000298023224</span><span class="p">,</span> <span class="mf">0.20000000298023224</span><span class="p">,</span> <span class="mf">0.20000000298023224</span><span class="p">,</span> <span class="mf">0.20000000298023224</span><span class="p">,</span> <span class="mf">0.20000000298023224</span><span class="p">,</span> <span class="mf">0.20000000298023224</span><span class="p">,</span> <span class="mf">0.20000000298023224</span><span class="p">]</span>
 
 <span class="n">module_aspect_ratio</span> <span class="o">=</span> <span class="mi">2</span>
@@ -9201,81 +9249,6 @@ title="Print to PDF"
 <h2>B. Get File from the SAM repository URL<a class="headerlink" href="#b-get-file-from-the-sam-repository-url" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Testing with a local file first downloaded. Please not that &#39;download&#39; from Github web interface messes up the csv properties and this would fail.</span>
-<span class="n">fileee</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\Users\sayala\Documents\GitHub\RTCanalysis\BEST_Sam_PVsyst_BR_BVF_Results\pySAM\CEC Modules.csv&#39;</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fileee</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">mymod</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Prism&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;457BSTC&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="n">mymod</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1916</span><span class="o">/</span><span class="mf">233394445.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fileee</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\Users\sayala\Documents\GitHub\RTCanalysis\BEST_Sam_PVsyst_BR_BVF_Results\pySAM\CEC Modules.csv&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fileee</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">mymod</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Prism&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;457BSTC&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">df</span><span class="p">[</span><span class="n">mymod</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">609</span> 
-<span class="ne">--&gt; </span><span class="mi">610</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">611</span> 
-<span class="g g-Whitespace">    </span><span class="mi">612</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> 
-<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">462</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span> 
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">817</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">818</span> 
-<span class="ne">--&gt; </span><span class="mi">819</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">820</span> 
-<span class="g g-Whitespace">    </span><span class="mi">821</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1048</span>             <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1049</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1050</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1051</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1052</span>     <span class="k">def</span> <span class="nf">_failover_to_python</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1865</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1866</span>         <span class="c1"># open handles</span>
-<span class="ne">-&gt; </span><span class="mi">1867</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1868</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1869</span>         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="s2">&quot;compression&quot;</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1366</span>             <span class="n">compression</span><span class="o">=</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1367</span>             <span class="n">memory_map</span><span class="o">=</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="ne">-&gt; </span><span class="mi">1368</span>             <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1369</span>         <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1370</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">645</span>                 <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">646</span>                 <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">647</span>                 <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">648</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">649</span>         <span class="k">else</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;C:\\Users\\sayala\\Documents\\GitHub\\RTCanalysis\\BEST_Sam_PVsyst_BR_BVF_Results\\pySAM\\CEC Modules.csv&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 </pre></div>
 </div>
@@ -9314,9 +9287,9 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#url = &#39;https://raw.githubusercontent.com/NREL/SAM/develop/deploy/libraries/CEC%20Modules.csv&#39;</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/NREL/SAM/patch/deploy/libraries/CEC%20Modules.csv&#39;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">modfilter</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Prism&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;457BSTC&#39;</span><span class="p">)</span>
-<span class="n">mymod</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">modfilter</span><span class="p">]</span>
-<span class="n">otherbranchdate</span> <span class="o">=</span> <span class="n">mymod</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">modfilter</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Prism&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Prism&#39;</span><span class="p">)</span>
+<span class="n">mymod</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">modfilter</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">otherbranchdate</span> <span class="o">=</span> <span class="n">mymod</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -9329,8 +9302,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Master database is dated: 12/19/2019
-Patch database is dated: 11/25/2020
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Master database is dated: 11/25/2020
+Patch database is dated: 5/28/2022
 </pre></div>
 </div>
 </div>
@@ -9340,41 +9313,54 @@ Patch database is dated: 11/25/2020
 <p>This are read as strings, so we need to make</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">Bifacial</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mymod</span><span class="o">.</span><span class="n">a_ref</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.5188&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cec_a_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">a_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 1.885731</span>
-<span class="n">cec_adjust</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">Adjust</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 10.400029</span>
-<span class="n">cec_alpha_sc</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">alpha_sc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 0.004675</span>
-<span class="n">cec_area</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">A_c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 1.979</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mymod</span><span class="o">.</span><span class="n">A_c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.65&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Values on comments of each line were for a different module not found in the CEC database anymore (name changed?). </span>
+<span class="c1"># Leaving them for reference of the scale of values expected.</span>
+<span class="n">cec_a_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">a_ref</span><span class="p">)</span> <span class="c1"># 1.885731</span>
+<span class="n">cec_adjust</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">Adjust</span><span class="p">)</span> <span class="c1"># 10.400029</span>
+<span class="n">cec_alpha_sc</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">alpha_sc</span><span class="p">)</span> <span class="c1"># 0.004675</span>
+<span class="n">cec_area</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">A_c</span><span class="p">)</span> <span class="c1"># 1.979</span>
 
-<span class="n">cec_beta_oc</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">beta_oc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># -0.139925</span>
-<span class="n">cec_gamma_r</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">gamma_r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># -0.4028</span>
-<span class="n">cec_i_l_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">I_L_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 9.80468</span>
-<span class="n">cec_i_mp_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">I_mp_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 9.26</span>
-<span class="n">cec_i_o_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">I_o_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 7.72903e-11       # NOT THE SAME, DB says &quot;0.0&quot;</span>
-<span class="n">cec_i_sc_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">I_sc_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 9.8</span>
-<span class="n">cec_is_bifacial</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">Bifacial</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 1</span>
-<span class="n">cec_module_length</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">Length</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 2.011</span>
-<span class="n">cec_module_width</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">Width</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 0.984</span>
+<span class="n">cec_beta_oc</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">beta_oc</span><span class="p">)</span> <span class="c1"># -0.139925</span>
+<span class="n">cec_gamma_r</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">gamma_r</span><span class="p">)</span> <span class="c1"># -0.4028</span>
+<span class="n">cec_i_l_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">I_L_ref</span><span class="p">)</span> <span class="c1"># 9.80468</span>
+<span class="n">cec_i_mp_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">I_mp_ref</span><span class="p">)</span> <span class="c1"># 9.26</span>
+<span class="n">cec_i_o_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">I_o_ref</span><span class="p">)</span> <span class="c1"># 7.72903e-11       </span>
+<span class="n">cec_i_sc_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">I_sc_ref</span><span class="p">)</span> <span class="c1"># 9.8</span>
+<span class="n">cec_is_bifacial</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">Bifacial</span><span class="p">)</span> <span class="c1"># 1</span>
+<span class="n">cec_module_length</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">Length</span><span class="p">)</span> <span class="c1"># 2.011</span>
+<span class="n">cec_module_width</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">Width</span><span class="p">)</span> <span class="c1"># 0.984</span>
 <span class="n">module_aspect_ratio</span> <span class="o">=</span> <span class="n">cec_module_length</span><span class="o">/</span><span class="n">cec_module_width</span>    <span class="c1"># 2.043699187</span>
 
-
-<span class="n">cec_n_s</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">N_s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 72</span>
-<span class="n">cec_r_s</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">R_s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#0.396799</span>
-<span class="n">cec_r_sh_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">R_sh_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 830.975492</span>
-<span class="n">cec_t_noct</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">T_NOCT</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 47.4</span>
-<span class="n">cec_v_mp_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">V_mp_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 38.9</span>
-<span class="n">cec_v_oc_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">V_oc_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 48.2</span>
+<span class="n">cec_n_s</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">N_s</span><span class="p">)</span> <span class="c1"># 72</span>
+<span class="n">cec_r_s</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">R_s</span><span class="p">)</span> <span class="c1">#0.396799</span>
+<span class="n">cec_r_sh_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">R_sh_ref</span><span class="p">)</span> <span class="c1"># 830.975492</span>
+<span class="n">cec_t_noct</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">T_NOCT</span><span class="p">)</span> <span class="c1"># 47.4</span>
+<span class="n">cec_v_mp_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">V_mp_ref</span><span class="p">)</span> <span class="c1"># 38.9</span>
+<span class="n">cec_v_oc_ref</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mymod</span><span class="o">.</span><span class="n">V_oc_ref</span><span class="p">)</span> <span class="c1"># 48.2</span>
 </pre></div>
 </div>
 </div>
@@ -9445,7 +9431,7 @@ Patch database is dated: 11/25/2020
 <p>Our inverter is ‘Fronius USA: Fronius Symo 10.0-3 480 [480V]’. Using the same look-up technique as with the module</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modfilter</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Fronius USA&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;480V&#39;</span><span class="p">)</span>  <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;10.0&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modfilter</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Fronius&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;480V&#39;</span><span class="p">)</span>  <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;10.0&#39;</span><span class="p">)</span>
 <span class="n">myinv</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">modfilter</span><span class="p">]</span>
 <span class="n">myinv</span>
 </pre></div>
@@ -9485,7 +9471,6 @@ Patch database is dated: 11/25/2020
       <th>Mppt_low</th>
       <th>Mppt_high</th>
       <th>CEC_Date</th>
-      <th>CEC_Type</th>
       <th>CEC_hybrid</th>
     </tr>
     <tr>
@@ -9506,29 +9491,27 @@ Patch database is dated: 11/25/2020
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Fronius USA: Fronius Symo 10.0-3 480 [480V]</th>
+      <th>Fronius International GmbH: Fronius Symo 10.0-3 480 [480V]</th>
       <td>480</td>
-      <td>64.071510</td>
+      <td>64.1251</td>
       <td>9995</td>
-      <td>10259.992188</td>
+      <td>10260.1</td>
       <td>670</td>
-      <td>-2.753997e-07</td>
-      <td>-0.000022</td>
-      <td>-0.000375</td>
-      <td>0.001689</td>
-      <td>2.998500</td>
+      <td>-2.75409e-07</td>
+      <td>-2.25745e-05</td>
+      <td>-0.000385046</td>
+      <td>0.00168874</td>
+      <td>0.86</td>
       <td>800</td>
-      <td>15.313421</td>
+      <td>15.3135</td>
       <td>100</td>
       <td>800</td>
-      <td>NaN</td>
-      <td>Utility Interactive</td>
-      <td>empty</td>
+      <td>3/1/2019</td>
+      <td>N</td>
     </tr>
   </tbody>
 </table>
@@ -9633,166 +9616,6 @@ Patch database is dated: 11/25/2020
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ac_lifetime_loss&#39;,
- &#39;ac_loss&#39;,
- &#39;ac_perf_adj_loss&#39;,
- &#39;ac_transmission_loss&#39;,
- &#39;ac_wiring_loss&#39;,
- &#39;airmass&#39;,
- &#39;alb&#39;,
- &#39;annual_ac_gross&#39;,
- &#39;annual_ac_inv_clip_loss_percent&#39;,
- &#39;annual_ac_inv_eff_loss_percent&#39;,
- &#39;annual_ac_inv_pnt_loss_percent&#39;,
- &#39;annual_ac_inv_pso_loss_percent&#39;,
- &#39;annual_ac_lifetime_loss_percent&#39;,
- &#39;annual_ac_loss_ond&#39;,
- &#39;annual_ac_perf_adj_loss_percent&#39;,
- &#39;annual_ac_wiring_loss&#39;,
- &#39;annual_ac_wiring_loss_percent&#39;,
- &#39;annual_dc_diodes_loss&#39;,
- &#39;annual_dc_diodes_loss_percent&#39;,
- &#39;annual_dc_gross&#39;,
- &#39;annual_dc_inv_tdc_loss_percent&#39;,
- &#39;annual_dc_invmppt_loss&#39;,
- &#39;annual_dc_lifetime_loss_percent&#39;,
- &#39;annual_dc_loss_ond&#39;,
- &#39;annual_dc_mismatch_loss&#39;,
- &#39;annual_dc_mismatch_loss_percent&#39;,
- &#39;annual_dc_module_loss_percent&#39;,
- &#39;annual_dc_mppt_clip_loss_percent&#39;,
- &#39;annual_dc_nameplate_loss&#39;,
- &#39;annual_dc_nameplate_loss_percent&#39;,
- &#39;annual_dc_net&#39;,
- &#39;annual_dc_nominal&#39;,
- &#39;annual_dc_optimizer_loss&#39;,
- &#39;annual_dc_optimizer_loss_percent&#39;,
- &#39;annual_dc_perf_adj_loss_percent&#39;,
- &#39;annual_dc_snow_loss_percent&#39;,
- &#39;annual_dc_tracking_loss&#39;,
- &#39;annual_dc_tracking_loss_percent&#39;,
- &#39;annual_dc_wiring_loss&#39;,
- &#39;annual_dc_wiring_loss_percent&#39;,
- &#39;annual_energy&#39;,
- &#39;annual_energy_distribution_time&#39;,
- &#39;annual_gh&#39;,
- &#39;annual_inv_cliploss&#39;,
- &#39;annual_inv_pntloss&#39;,
- &#39;annual_inv_psoloss&#39;,
- &#39;annual_inv_tdcloss&#39;,
- &#39;annual_poa_beam_eff&#39;,
- &#39;annual_poa_beam_nom&#39;,
- &#39;annual_poa_cover_loss_percent&#39;,
- &#39;annual_poa_eff&#39;,
- &#39;annual_poa_front&#39;,
- &#39;annual_poa_nom&#39;,
- &#39;annual_poa_rear&#39;,
- &#39;annual_poa_rear_gain_percent&#39;,
- &#39;annual_poa_shaded&#39;,
- &#39;annual_poa_shaded_soiled&#39;,
- &#39;annual_poa_shading_loss_percent&#39;,
- &#39;annual_poa_soiling_loss_percent&#39;,
- &#39;annual_subarray1_dc_diodes_loss&#39;,
- &#39;annual_subarray1_dc_gross&#39;,
- &#39;annual_subarray1_dc_mismatch_loss&#39;,
- &#39;annual_subarray1_dc_nameplate_loss&#39;,
- &#39;annual_subarray1_dc_tracking_loss&#39;,
- &#39;annual_subarray1_dc_wiring_loss&#39;,
- &#39;annual_total_loss_percent&#39;,
- &#39;annual_transmission_loss&#39;,
- &#39;annual_transmission_loss_percent&#39;,
- &#39;annual_xfmr_loss_percent&#39;,
- &#39;capacity_factor&#39;,
- &#39;capacity_factor_ac&#39;,
- &#39;dc_degrade_factor&#39;,
- &#39;dc_invmppt_loss&#39;,
- &#39;dc_net&#39;,
- &#39;dc_snow_loss&#39;,
- &#39;df&#39;,
- &#39;dn&#39;,
- &#39;gen&#39;,
- &#39;gh&#39;,
- &#39;gh_calc&#39;,
- &#39;inv_cliploss&#39;,
- &#39;inv_eff&#39;,
- &#39;inv_pntloss&#39;,
- &#39;inv_psoloss&#39;,
- &#39;inv_tdcloss&#39;,
- &#39;inv_total_loss&#39;,
- &#39;inverterMPPT1_DCVoltage&#39;,
- &#39;kwh_per_kw&#39;,
- &#39;monthly_dc&#39;,
- &#39;monthly_energy&#39;,
- &#39;monthly_poa_beam_eff&#39;,
- &#39;monthly_poa_beam_nom&#39;,
- &#39;monthly_poa_eff&#39;,
- &#39;monthly_poa_front&#39;,
- &#39;monthly_poa_nom&#39;,
- &#39;monthly_poa_rear&#39;,
- &#39;nameplate_dc_rating&#39;,
- &#39;performance_ratio&#39;,
- &#39;poa_beam_eff&#39;,
- &#39;poa_beam_nom&#39;,
- &#39;poa_eff&#39;,
- &#39;poa_front&#39;,
- &#39;poa_nom&#39;,
- &#39;poa_rear&#39;,
- &#39;poa_shaded&#39;,
- &#39;poa_shaded_soiled&#39;,
- &#39;shadedb_subarray1_shade_frac&#39;,
- &#39;sixpar_Adj&#39;,
- &#39;sixpar_Il&#39;,
- &#39;sixpar_Io&#39;,
- &#39;sixpar_Rs&#39;,
- &#39;sixpar_Rsh&#39;,
- &#39;sixpar_a&#39;,
- &#39;snowdepth&#39;,
- &#39;sol_alt&#39;,
- &#39;sol_azi&#39;,
- &#39;sol_zen&#39;,
- &#39;subarray1_aoi&#39;,
- &#39;subarray1_aoi_modifier&#39;,
- &#39;subarray1_axisrot&#39;,
- &#39;subarray1_beam_shading_factor&#39;,
- &#39;subarray1_celltemp&#39;,
- &#39;subarray1_celltempSS&#39;,
- &#39;subarray1_dc_gross&#39;,
- &#39;subarray1_dc_voltage&#39;,
- &#39;subarray1_dcloss&#39;,
- &#39;subarray1_idealrot&#39;,
- &#39;subarray1_isc&#39;,
- &#39;subarray1_linear_derate&#39;,
- &#39;subarray1_modeff&#39;,
- &#39;subarray1_poa_eff&#39;,
- &#39;subarray1_poa_eff_beam&#39;,
- &#39;subarray1_poa_eff_diff&#39;,
- &#39;subarray1_poa_front&#39;,
- &#39;subarray1_poa_nom&#39;,
- &#39;subarray1_poa_rear&#39;,
- &#39;subarray1_poa_shaded&#39;,
- &#39;subarray1_poa_shaded_soiled&#39;,
- &#39;subarray1_soiling_derate&#39;,
- &#39;subarray1_ss_derate&#39;,
- &#39;subarray1_ss_diffuse_derate&#39;,
- &#39;subarray1_ss_reflected_derate&#39;,
- &#39;subarray1_surf_azi&#39;,
- &#39;subarray1_surf_tilt&#39;,
- &#39;subarray1_voc&#39;,
- &#39;sunpos_hour&#39;,
- &#39;sunup&#39;,
- &#39;tdry&#39;,
- &#39;ts_shift_hours&#39;,
- &#39;wspd&#39;,
- &#39;xfmr_ll_ts&#39;,
- &#39;xfmr_ll_year1&#39;,
- &#39;xfmr_loss_ts&#39;,
- &#39;xfmr_loss_year1&#39;,
- &#39;xfmr_nll_ts&#39;,
- &#39;xfmr_nll_year1&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -9892,16 +9715,6 @@ Patch database is dated: 11/25/2020
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">guiSAMdic</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">46</span><span class="o">-</span><span class="mi">8</span><span class="n">a7993ef7de0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">guiSAMdic</span>
-
-<span class="ne">NameError</span>: name &#39;guiSAMdic&#39; is not defined
 </pre></div>
 </div>
 </div>

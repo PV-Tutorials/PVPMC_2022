@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6 - pySAM Simulation" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html" />
+    <link rel="next" title="Tutorial D (extra) - pySAM Simulation" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html" />
     <link rel="prev" title="Tutorial B - pvfree" href="Tutorial%20B%20-%20pvfree.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
-                    Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
+                    Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it!
                 </a>
             </li>
         </ul>
@@ -143,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html">
-   6 - pySAM Simulation
+   Tutorial D (extra) - pySAM Simulation
   </a>
  </li>
 </ul>
@@ -236,6 +236,24 @@ title="Launch on JupyterHub"
     <img src="_static/images/logo_jupyterhub.svg">
   </span>
 <span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/PVSC-Python-Tutorials/PVPMC_2022/blob/main/Tutorial C - Modeling Module's Performance Advanced.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -658,9 +676,17 @@ title="Print to PDF"
 </ul>
 <p>The figure below shows IEC 61853 test results performed at CFV labs:</p>
 <p><img alt="Overview" src="_images/t4_PANOverview.PNG" /></p>
-<p>Certain combinations are excluded because they’re unlikely: (1100-W/m², 15°C), (400-W/m², 75°C), (200-W/m², 50°C), (200-W/m², 75°C), (100-W/m², 50°C), and (100-W/m², 75°C). The figure below shows SAM parametrs fit to IEC61853 test results for two different cell technologies. The white space shows combinations of irradiance and temperature which were intentionally excluded from testing.</p>
+<p>Certain combinations are excluded because they’re unlikely: (1100-W/m², 15°C), (400-W/m², 75°C), (200-W/m², 50°C), (200-W/m², 75°C), (100-W/m², 50°C), and (100-W/m², 75°C). The figure below shows SAM parameters fit to IEC61853 test results for two different cell technologies. The white space shows combinations of irradiance and temperature which were intentionally excluded from testing.</p>
 <p><img alt="Overview" src="_images/t4_SingleDiodeParameterBehavior_to_TemperatureandIrradiance.PNG" /></p>
 <p>Attribution: <a class="reference external" href="https://www.nrel.gov/docs/fy19osti/68637.pdf">NREL Dobos, Freeman 2019</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if running on google colab, uncomment the next line and execute this cell to install the dependencies and prevent &quot;ModuleNotFoundError&quot; in later cells:</span>
+<span class="c1"># !pip install -r https://raw.githubusercontent.com/PVSC-Python-Tutorials/PVPMC_2022/main/requirements.txt</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import pvlib and other useful python packages</span>
@@ -740,10 +766,10 @@ PVWatts only yields the performance at the max power point (MPP) of the module, 
 <h3>pvlib python<a class="headerlink" href="#pvlib-python" title="Permalink to this headline">#</a></h3>
 <p>There are several functions we can use in pvlib python:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://pvlib-python.readthedocs.io/en/latest/generated/pvlib.pvsystem.retrieve_sam.html#pvlib.pvsystem.retrieve_sam"><code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.retrieve_sam()</span></code></a></p></li>
-<li><p><a class="reference external" href="https://pvlib-python.readthedocs.io/en/latest/generated/pvlib.pvsystem.calcparams_cec.html"><code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.calcparams_cec()</span></code></a></p></li>
-<li><p><a class="reference external" href="https://pvlib-python.readthedocs.io/en/latest/generated/pvlib.pvsystem.singlediode.html"><code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.singlediode()</span></code></a></p></li>
-<li><p><a class="reference external" href="https://pvlib-python.readthedocs.io/en/latest/generated/pvlib.ivtools.sdm.fit_cec_sam.html"><code class="docutils literal notranslate"><span class="pre">pvlib.ivtools.sdm.fit_cec_sam()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.pvsystem.retrieve_sam.html#pvlib.pvsystem.retrieve_sam"><code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.retrieve_sam()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.pvsystem.calcparams_cec.html"><code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.calcparams_cec()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.pvsystem.singlediode.html"><code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.singlediode()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.ivtools.sdm.fit_cec_sam.html"><code class="docutils literal notranslate"><span class="pre">pvlib.ivtools.sdm.fit_cec_sam()</span></code></a></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1223,7 +1249,7 @@ Name: Canadian_Solar_Inc__CS5P_220M, dtype: object
 </section>
 <section id="calculate-cec-parameters">
 <h2>Calculate CEC Parameters<a class="headerlink" href="#calculate-cec-parameters" title="Permalink to this headline">#</a></h2>
-<p>The module parameters are given at the reference condition. Use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/latest/generated/pvlib.pvsystem.calcparams_cec.html"><code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.calcparams_cec()</span></code></a> to generate the five SDM parameters at your desired irradiance and temperature to use with <a class="reference external" href="https://pvlib-python.readthedocs.io/en/latest/generated/pvlib.pvsystem.singlediode.html"><code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.singlediode()</span></code></a> to calculate the IV curve information.</p>
+<p>The module parameters are given at the reference condition. Use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.pvsystem.calcparams_cec.html"><code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.calcparams_cec()</span></code></a> to generate the five SDM parameters at your desired irradiance and temperature to use with <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.pvsystem.singlediode.html"><code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.singlediode()</span></code></a> to calculate the IV curve information.</p>
 <section id="nnsvth-what-s-this">
 <h3><code class="docutils literal notranslate"><span class="pre">nNsVth</span></code>, what’s this?<a class="headerlink" href="#nnsvth-what-s-this" title="Permalink to this headline">#</a></h3>
 <p>The diode ideality factor (n) is combined with the number of cells (Ns) and the thermal voltage (Vth) to create a convenience parameter. This is <a class="reference external" href="https://en.wikipedia.org/wiki/Syntactic_sugar">syntactic sugar</a>.</p>
@@ -1283,13 +1309,13 @@ Name: Canadian_Solar_Inc__CS5P_220M, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 22.47343394,  21.33361989,  18.40248885,  15.37301683,
-        46.09149166,  43.8742866 ,  38.16845408,  32.26328096,
-        93.53042326,  89.21121134,  78.09399194,  66.58417955,
-       140.31155148, 133.92211282, 117.4814962 , 100.47025604,
-       186.01690382, 177.57186861, 155.8544359 , 133.40606247,
-       230.45392244, 219.96093865, 192.99618253, 165.16041729,
-       252.16127408, 240.6459279 , 211.06605369, 180.55357125])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 22.47344592,  21.33362028,  18.40249412,  15.37302335,
+        46.09151614,  43.87428661,  38.16846011,  32.26328112,
+        93.53042781,  89.2112251 ,  78.09399529,  66.58418353,
+       140.31159673, 133.92211364, 117.48149685, 100.47026643,
+       186.01692511, 177.5719005 , 155.85443596, 133.40606739,
+       230.45399426, 219.96096044, 192.99622092, 165.16045701,
+       252.16130617, 240.64592808, 211.06610839, 180.55358287])
 </pre></div>
 </div>
 </div>
@@ -1330,7 +1356,7 @@ Name: Canadian_Solar_Inc__CS5P_220M, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial C - Modeling Module's Performance Advanced_21_0.png" src="_images/Tutorial C - Modeling Module's Performance Advanced_21_0.png" />
+<img alt="_images/Tutorial C - Modeling Module's Performance Advanced_22_0.png" src="_images/Tutorial C - Modeling Module's Performance Advanced_22_0.png" />
 </div>
 </div>
 </section>
@@ -1379,7 +1405,7 @@ Name: Canadian_Solar_Inc__CS5P_220M, dtype: object
     <a class='right-next' id="next-link" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">6 - pySAM Simulation</p>
+        <p class="prev-next-title">Tutorial D (extra) - pySAM Simulation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

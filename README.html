@@ -107,7 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
-                    Tutorial 1 - Weather Data: Accesing it, understanding it, visualizing it!
+                    Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it!
                 </a>
             </li>
         </ul>
@@ -139,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html">
-   6 - pySAM Simulation
+   Tutorial D (extra) - pySAM Simulation
   </a>
  </li>
 </ul>
@@ -429,16 +429,17 @@ title="Print to PDF"
 <section id="tutorial-summary">
 <h2>Tutorial Summary:<a class="headerlink" href="#tutorial-summary" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><strong>Tutorial 0</strong>: Introduction to the tutorial, the lesson plan, and resources (~30 minutes)</p></li>
-<li><p><strong>Tutorial 1</strong>: Access TMY weather data and visualize monthly irradiance data (~30 minutes)</p></li>
+<li><p><strong>Tutorial 0</strong>: Introduction to the tutorial, the lesson plan, and resources (~15 minutes)</p></li>
+<li><p><strong>Tutorial 1</strong>: Access TMY weather data and visualize monthly irradiance data (~20 minutes)</p></li>
 <li><p><strong>Tutorial 2</strong>: Calculate solar position, plane-of-array irradiance, and
-visualize average daily insolation (30 minutes)</p></li>
-<li><p><strong>Tutorial 3</strong>: Estimate module temperature from ambient (~20 minutes)</p></li>
-<li><p><strong>Tutorial 4</strong>: Use POA irradiance and module temperature to model output power
-from a single module (~20 minutes)</p></li>
-<li><p><strong>Tutorial 5</strong>: Combine modules to form strings, calculate inverter efficiency
-and total array output (~independent study)</p></li>
+visualize average daily insolation (20 minutes)</p></li>
+<li><p><strong>Tutorial 3</strong>: Calculate array temperature and power (~20 minutes)</p></li>
+<li><p><strong>Problem Based Learning 1</strong>: An opportunity to put the learned skills to work in a group setting. (~1 hr?)</p></li>
+</ul>
+<p>Extras:</p>
+<ul class="simple">
 <li><p><strong>Tutorials Appendices</strong>: More tutorials on a variety of fun topics (~independent study)</p></li>
+<li><p><strong>Problem Based Learning 2</strong>: An opportunity to put the learned skills to model the PVPMC 2021 Modeling Round Robin on your own!</p></li>
 </ul>
 </section>
 <section id="tutorial-setup">
@@ -495,8 +496,8 @@ steps:</p>
 <li><p>Create the environment and install the requirements. The repository includes
 a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file that contains a list the packages needed to run
 this tutorial. To install them using conda run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">pvsc48</span> <span class="n">jupyter</span> <span class="o">-</span><span class="n">c</span> <span class="n">pvlib</span> <span class="o">--</span><span class="n">file</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">conda</span> <span class="n">activate</span> <span class="n">pvsc48</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">pvpmc2022</span> <span class="n">jupyter</span> <span class="o">-</span><span class="n">c</span> <span class="n">pvlib</span> <span class="o">--</span><span class="n">file</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">pvpmc2022</span>
 </pre></div>
 </div>
 </li>
@@ -505,7 +506,7 @@ this tutorial. To install them using conda run:</p>
 </pre></div>
 </div>
 </li>
-<li><p>Use the file explorer in Jupyter lab to browse to <code class="docutils literal notranslate"><span class="pre">PVSC48-Python-Tutorial</span></code>
+<li><p>Use the file explorer in Jupyter lab to browse to <code class="docutils literal notranslate"><span class="pre">PVPMC_2022</span></code>
 and start the first Tutorial.</p></li>
 </ol>
 </section>
