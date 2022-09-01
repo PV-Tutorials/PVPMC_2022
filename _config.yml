@@ -9,6 +9,8 @@ logo: images/PVLib_PVPMCLogo.PNG
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: auto
+  exclude_patterns:
+    - 'Tutorial D - pySAM Modeling the Bifacial Tracker Field at NREL.ipynb'
 
 # Define the name of the latex output file for PDF builds
 latex:
