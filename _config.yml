@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: "PVPMC 2022: Solar PV Modeling"
+title: "PVPMC 2022"
 author: Silvana Ayala Pelaez, Mark Mikofski, Kevin Anderson
-logo: images/tutorial_banner.PNG
+logo: images/PVLib_PVPMCLogo.PNG
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -34,3 +34,4 @@ html:
 launch_buttons:
   jupyterhub_url: "https://pvsc-python-tutorial.eastus.cloudapp.azure.com"
   thebe: true
+  colab_url: "https://colab.research.google.com"
