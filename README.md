@@ -85,8 +85,8 @@ steps:
    this tutorial. To install them using conda run:
 
    ```
-   conda create -n pvsc48 jupyter -c pvlib --file requirements.txt
-   conda activate pvsc48
+   conda create -n pvpmc2022 jupyter -c pvlib --file requirements.txt
+   conda activate pvpmc2022
    ```
 
 1. Start a Jupyter session:
@@ -95,7 +95,7 @@ steps:
    jupyter notebook
    ```
 
-1. Use the file explorer in Jupyter lab to browse to `PVSC48-Python-Tutorial`
+1. Use the file explorer in Jupyter lab to browse to `PVPMC_2022`
    and start the first Tutorial.
 
 
