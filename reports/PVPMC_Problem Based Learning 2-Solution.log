@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/nbclient/client.py", line 664, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+DATA_DIR = pathlib.Path(pvlib.__file__).parent / 'data'
+df_tmy, meta_dict = pvlib.iotools.read_tmy3(DATA_DIR / 'TMY3_Albuquerque_NM.CSV', coerce_year=2017)
+meta_dict  # display the dictionary of metadata
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m/tmp/ipykernel_1881/2590221864.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mDATA_DIR[0m [0;34m=[0m [0mpathlib[0m[0;34m.[0m[0mPath[0m[0;34m([0m[0mpvlib[0m[0;34m.[0m[0m__file__[0m[0;34m)[0m[0;34m.[0m[0mparent[0m [0;34m/[0m [0;34m'data'[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mdf_tmy[0m[0;34m,[0m [0mmeta_dict[0m [0;34m=[0m [0mpvlib[0m[0;34m.[0m[0miotools[0m[0;34m.[0m[0mread_tmy3[0m[0;34m([0m[0mDATA_DIR[0m [0;34m/[0m [0;34m'TMY3_Albuquerque_NM.CSV'[0m[0;34m,[0m [0mcoerce_year[0m[0;34m=[0m[0;36m2017[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mmeta_dict[0m  [0;31m# display the dictionary of metadata[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/pvlib/iotools/tmy.py[0m in [0;36mread_tmy3[0;34m(filename, coerce_year, recolumn)[0m
+[1;32m    161[0m     [0mhead[0m [0;34m=[0m [0;34m[[0m[0;34m'USAF'[0m[0;34m,[0m [0;34m'Name'[0m[0;34m,[0m [0;34m'State'[0m[0;34m,[0m [0;34m'TZ'[0m[0;34m,[0m [0;34m'latitude'[0m[0;34m,[0m [0;34m'longitude'[0m[0;34m,[0m [0;34m'altitude'[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m    162[0m [0;34m[0m[0m
+[0;32m--> 163[0;31m     [0;32mwith[0m [0mopen[0m[0;34m([0m[0mstr[0m[0;34m([0m[0mfilename[0m[0;34m)[0m[0;34m,[0m [0;34m'r'[0m[0;34m)[0m [0;32mas[0m [0mcsvdata[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    164[0m         [0;31m# read in file metadata, advance buffer to second line[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    165[0m         [0mfirstline[0m [0;34m=[0m [0mcsvdata[0m[0;34m.[0m[0mreadline[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/pvlib/data/TMY3_Albuquerque_NM.CSV'
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/pvlib/data/TMY3_Albuquerque_NM.CSV'
+

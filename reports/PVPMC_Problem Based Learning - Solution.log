@@ -17,14 +17,24 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-my_string =    # Add your text here. Remember to put it inside of single quotes or double quotes ( " " or '' )
-print(my_string)
+location = pvlib.location.Location(latitude=metadata['Latitude'],
+                                   longitude=metadata['Longitude'])
+
+times = df_tmy.index - pd.Timedelta('30min')
+solar_position = location.get_solarposition(times)
+solar_position.index += pd.Timedelta('30min')
+
 ------------------
 
-[0;36m  File [0;32m"/tmp/ipykernel_1904/3863091146.py"[0;36m, line [0;32m1[0m
-[0;31m    my_string =    # Add your text here. Remember to put it inside of single quotes or double quotes ( " " or '' )[0m
-[0m                                                                                                                  ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m/tmp/ipykernel_1832/2085116350.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m                                    longitude=metadata['Longitude'])
+[1;32m      3[0m [0;34m[0m[0m
+[0;32m----> 4[0;31m [0mtimes[0m [0;34m=[0m [0mdf_tmy[0m[0;34m.[0m[0mindex[0m [0;34m-[0m [0mpd[0m[0;34m.[0m[0mTimedelta[0m[0;34m([0m[0;34m'30min'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m [0msolar_position[0m [0;34m=[0m [0mlocation[0m[0;34m.[0m[0mget_solarposition[0m[0;34m([0m[0mtimes[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0msolar_position[0m[0;34m.[0m[0mindex[0m [0;34m+=[0m [0mpd[0m[0;34m.[0m[0mTimedelta[0m[0;34m([0m[0;34m'30min'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-SyntaxError: invalid syntax (3863091146.py, line 1)
+[0;31mNameError[0m: name 'df_tmy' is not defined
+NameError: name 'df_tmy' is not defined
 

@@ -1,0 +1,1072 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PVPMC Problem Based Learning &#8212; PVPMC 2022</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/PVLib_PVPMCLogo.PNG" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">PVPMC 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="Tutorial%201%20-%20TMY%20Weather%20Data.html">
+                    Tutorial 1 - Weather Data: Accessing it, understanding it, visualizing it!
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%202%20-%20POA%20Irradiance.html">
+   Tutorial 2 - Modeling POA from GHI, DHI, and DNI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%203%20-%20Array%20Power.html">
+   Tutorial 3 - Modeling an Array Power with PVWatts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%20A%20-%20Single%20Diode%20Model.html">
+   Tutorial A - Single Diode Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%20B%20-%20pvfree.html">
+   Tutorial B - pvfree
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%20C%20-%20Modeling%20Module%27s%20Performance%20Advanced.html">
+   Tutorial C - PV Module Performance Advanced
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%20D%20-%20pySAM%20Modeling%20the%20Bifacial%20Tracker%20Field%20at%20NREL.html">
+   Tutorial D (extra) - pySAM Simulation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/PVSC-Python-Tutorials/PVPMC_2022/main?urlpath=tree/PVPMC_Problem Based Learning - Solution.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://pvsc-python-tutorial.eastus.cloudapp.azure.com/hub/user-redirect/git-pull?repo=https%3A//github.com/PVSC-Python-Tutorials/PVPMC_2022&urlpath=tree/PVPMC_2022/PVPMC_Problem+Based+Learning+-+Solution.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/PVSC-Python-Tutorials/PVPMC_2022/blob/main/PVPMC_Problem Based Learning - Solution.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/PVSC-Python-Tutorials/PVPMC_2022"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/PVSC-Python-Tutorials/PVPMC_2022/issues/new?title=Issue%20on%20page%20%2FPVPMC_Problem Based Learning - Solution.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/PVPMC_Problem Based Learning - Solution.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goal-model-energy-loss-due-to-high-wind-stowing">
+   Goal: Model energy loss due to high wind stowing.
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>PVPMC Problem Based Learning</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goal-model-energy-loss-due-to-high-wind-stowing">
+   Goal: Model energy loss due to high wind stowing.
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><img alt="tutorial banner" src="_images/PVLib_PVPMCLogo.PNG" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="pvpmc-problem-based-learning">
+<h1>PVPMC Problem Based Learning<a class="headerlink" href="#pvpmc-problem-based-learning" title="Permalink to this headline">#</a></h1>
+<section id="goal-model-energy-loss-due-to-high-wind-stowing">
+<h2>Goal: Model energy loss due to high wind stowing.<a class="headerlink" href="#goal-model-energy-loss-due-to-high-wind-stowing" title="Permalink to this headline">#</a></h2>
+<p>This is just one quick example of solution, there are other ways to achieve this!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pvlib</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  <span class="c1"># for data wrangling</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># for visualization</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>  <span class="c1"># for finding the example dataset</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pvlib</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># during the live tutorial, we&#39;ve stored a dedicated key on our server</span>
+<span class="n">NREL_API_KEY</span><span class="o">=</span><span class="kc">None</span>
+
+<span class="k">if</span> <span class="n">NREL_API_KEY</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">NREL_API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NREL_API_KEY&#39;</span><span class="p">]</span>  <span class="c1"># get dedicated key for tutorial from servier</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="n">NREL_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;DEMO_KEY&#39;</span>  <span class="c1"># OK for this demo, but better to get your own key</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dodge_Kansas</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">iotools</span><span class="o">.</span><span class="n">get_psm3</span><span class="p">(</span>
+    <span class="n">latitude</span><span class="o">=</span><span class="mf">37.7528</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">100.017</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="n">NREL_API_KEY</span><span class="p">,</span>
+    <span class="n">email</span><span class="o">=</span><span class="s1">&#39;mark.mikofski@dnv.com&#39;</span><span class="p">,</span>  <span class="c1"># &lt;-- any email works here fine</span>
+    <span class="n">names</span><span class="o">=</span><span class="s1">&#39;tmy&#39;</span><span class="p">)</span>
+
+<span class="n">metadata</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/pvlib/iotools/psm3.py:339: pvlibDeprecationWarning: PSM3 variable names will be renamed to pvlib conventions by default starting in pvlib 0.11.0. Specify map_variables=True to enable that behavior now, or specify map_variables=False to hide this warning.
+  &#39;to hide this warning.&#39;, pvlibDeprecationWarning)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Source&#39;: &#39;NSRDB&#39;,
+ &#39;Location ID&#39;: &#39;615057&#39;,
+ &#39;City&#39;: &#39;-&#39;,
+ &#39;State&#39;: &#39;-&#39;,
+ &#39;Country&#39;: &#39;-&#39;,
+ &#39;Latitude&#39;: 37.77,
+ &#39;Longitude&#39;: -100.02,
+ &#39;Time Zone&#39;: -6,
+ &#39;Elevation&#39;: 794,
+ &#39;Local Time Zone&#39;: -6,
+ &#39;Dew Point Units&#39;: &#39;c&#39;,
+ &#39;DHI Units&#39;: &#39;w/m2&#39;,
+ &#39;DNI Units&#39;: &#39;w/m2&#39;,
+ &#39;GHI Units&#39;: &#39;w/m2&#39;,
+ &#39;Temperature Units&#39;: &#39;c&#39;,
+ &#39;Pressure Units&#39;: &#39;mbar&#39;,
+ &#39;Wind Direction Units&#39;: &#39;Degrees&#39;,
+ &#39;Wind Speed Units&#39;: &#39;m/s&#39;,
+ &#39;Surface Albedo Units&#39;: &#39;N/A&#39;,
+ &#39;Version&#39;: &#39;unknown&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">Location</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">],</span>
+                                   <span class="n">longitude</span><span class="o">=</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">])</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="n">df_tmy</span><span class="o">.</span><span class="n">index</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;30min&#39;</span><span class="p">)</span>
+<span class="n">solar_position</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">get_solarposition</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+<span class="n">solar_position</span><span class="o">.</span><span class="n">index</span> <span class="o">+=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;30min&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1832</span><span class="o">/</span><span class="mf">2085116350.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                                    <span class="n">longitude</span><span class="o">=</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">times</span> <span class="o">=</span> <span class="n">df_tmy</span><span class="o">.</span><span class="n">index</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;30min&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">solar_position</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">get_solarposition</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">solar_position</span><span class="o">.</span><span class="n">index</span> <span class="o">+=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">&#39;30min&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;df_tmy&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tracking_angles</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">tracking</span><span class="o">.</span><span class="n">singleaxis</span><span class="p">(</span>
+    <span class="n">apparent_zenith</span><span class="o">=</span><span class="n">solar_position</span><span class="p">[</span><span class="s1">&#39;apparent_zenith&#39;</span><span class="p">],</span>
+    <span class="n">apparent_azimuth</span><span class="o">=</span><span class="n">solar_position</span><span class="p">[</span><span class="s1">&#39;azimuth&#39;</span><span class="p">],</span>
+    <span class="n">axis_tilt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">axis_azimuth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">max_angle</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">backtrack</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># for true-tracking</span>
+    <span class="n">gcr</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># irrelevant for true-tracking</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tracking_angles</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tracker_theta</th>
+      <th>aoi</th>
+      <th>surface_azimuth</th>
+      <th>surface_tilt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1990-01-01 01:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-01-01 02:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-01-01 03:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-01-01 04:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-01-01 05:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1990-12-31 20:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-12-31 21:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-12-31 22:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-12-31 23:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1991-01-01 00:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>8760 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stowing_angle</span><span class="o">=</span><span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;Wspd&#39;</span><span class="p">])</span><span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ec9b422dc0&gt;]
+</pre></div>
+</div>
+<img alt="_images/PVPMC_Problem Based Learning - Solution_8_1.png" src="_images/PVPMC_Problem Based Learning - Solution_8_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_tmy</span><span class="p">[</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;Wspd&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">6</span><span class="p">][</span><span class="s1">&#39;Wspd&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ec9e664910&gt;]
+</pre></div>
+</div>
+<img alt="_images/PVPMC_Problem Based Learning - Solution_9_1.png" src="_images/PVPMC_Problem Based Learning - Solution_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tracking_angles</span><span class="p">[</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;Wspd&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tracker_theta</th>
+      <th>aoi</th>
+      <th>surface_azimuth</th>
+      <th>surface_tilt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1990-01-01 01:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-01-01 11:00:00-05:00</th>
+      <td>22.497707</td>
+      <td>60.686921</td>
+      <td>90.0</td>
+      <td>22.497707</td>
+    </tr>
+    <tr>
+      <th>1990-01-04 23:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-01-05 04:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-01-05 11:00:00-05:00</th>
+      <td>22.324744</td>
+      <td>60.567332</td>
+      <td>90.0</td>
+      <td>22.324744</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1990-12-28 22:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-12-28 23:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-12-29 00:00:00-05:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-12-29 12:00:00-05:00</th>
+      <td>50.000000</td>
+      <td>51.658480</td>
+      <td>90.0</td>
+      <td>50.000000</td>
+    </tr>
+    <tr>
+      <th>1990-12-29 14:00:00-05:00</th>
+      <td>5.749148</td>
+      <td>60.861264</td>
+      <td>90.0</td>
+      <td>5.749148</td>
+    </tr>
+  </tbody>
+</table>
+<p>650 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smart_trackingdata</span><span class="o">=</span><span class="n">tracking_angles</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smart_trackingdata</span><span class="p">[</span><span class="s1">&#39;tracker_theta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;Wspd&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">smart_trackingdata</span><span class="p">[</span><span class="s1">&#39;tracker_theta&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#tracking_angles.iloc[df_tmy[&#39;Wspd&#39;]&gt;6][&#39;tracker_theta&#39;]=0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tracking_angles</span><span class="p">[</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;Wspd&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">6</span><span class="p">][</span><span class="s1">&#39;tracker_theta&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990-01-01 01:00:00-05:00          NaN
+1990-01-01 11:00:00-05:00    22.497707
+1990-01-04 23:00:00-05:00          NaN
+1990-01-05 04:00:00-05:00          NaN
+1990-01-05 11:00:00-05:00    22.324744
+                               ...    
+1990-12-28 22:00:00-05:00          NaN
+1990-12-28 23:00:00-05:00          NaN
+1990-12-29 00:00:00-05:00          NaN
+1990-12-29 12:00:00-05:00    50.000000
+1990-12-29 14:00:00-05:00     5.749148
+Name: tracker_theta, Length: 650, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smart_trackingdata</span><span class="p">[</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;Wspd&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">6</span><span class="p">][</span><span class="s1">&#39;tracker_theta&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990-01-01 01:00:00-05:00    0.0
+1990-01-01 11:00:00-05:00    0.0
+1990-01-04 23:00:00-05:00    0.0
+1990-01-05 04:00:00-05:00    0.0
+1990-01-05 11:00:00-05:00    0.0
+                            ... 
+1990-12-28 22:00:00-05:00    0.0
+1990-12-28 23:00:00-05:00    0.0
+1990-12-29 00:00:00-05:00    0.0
+1990-12-29 12:00:00-05:00    0.0
+1990-12-29 14:00:00-05:00    0.0
+Name: tracker_theta, Length: 650, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tmy</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Date (MM/DD/YYYY)&#39;, &#39;Time (HH:MM)&#39;, &#39;ETR&#39;, &#39;ETRN&#39;, &#39;GHI&#39;, &#39;GHISource&#39;,
+       &#39;GHIUncertainty&#39;, &#39;DNI&#39;, &#39;DNISource&#39;, &#39;DNIUncertainty&#39;, &#39;DHI&#39;,
+       &#39;DHISource&#39;, &#39;DHIUncertainty&#39;, &#39;GHillum&#39;, &#39;GHillumSource&#39;,
+       &#39;GHillumUncertainty&#39;, &#39;DNillum&#39;, &#39;DNillumSource&#39;, &#39;DNillumUncertainty&#39;,
+       &#39;DHillum&#39;, &#39;DHillumSource&#39;, &#39;DHillumUncertainty&#39;, &#39;Zenithlum&#39;,
+       &#39;ZenithlumSource&#39;, &#39;ZenithlumUncertainty&#39;, &#39;TotCld&#39;, &#39;TotCldSource&#39;,
+       &#39;TotCldUncertainty&#39;, &#39;OpqCld&#39;, &#39;OpqCldSource&#39;, &#39;OpqCldUncertainty&#39;,
+       &#39;DryBulb&#39;, &#39;DryBulbSource&#39;, &#39;DryBulbUncertainty&#39;, &#39;DewPoint&#39;,
+       &#39;DewPointSource&#39;, &#39;DewPointUncertainty&#39;, &#39;RHum&#39;, &#39;RHumSource&#39;,
+       &#39;RHumUncertainty&#39;, &#39;Pressure&#39;, &#39;PressureSource&#39;, &#39;PressureUncertainty&#39;,
+       &#39;Wdir&#39;, &#39;WdirSource&#39;, &#39;WdirUncertainty&#39;, &#39;Wspd&#39;, &#39;WspdSource&#39;,
+       &#39;WspdUncertainty&#39;, &#39;Hvis&#39;, &#39;HvisSource&#39;, &#39;HvisUncertainty&#39;, &#39;CeilHgt&#39;,
+       &#39;CeilHgtSource&#39;, &#39;CeilHgtUncertainty&#39;, &#39;Pwat&#39;, &#39;PwatSource&#39;,
+       &#39;PwatUncertainty&#39;, &#39;AOD&#39;, &#39;AODSource&#39;, &#39;AODUncertainty&#39;, &#39;Alb&#39;,
+       &#39;AlbSource&#39;, &#39;AlbUncertainty&#39;, &#39;Lprecipdepth&#39;, &#39;Lprecipquantity&#39;,
+       &#39;LprecipSource&#39;, &#39;LprecipUncertainty&#39;, &#39;PresWth&#39;, &#39;PresWthSource&#39;,
+       &#39;PresWthUncertainty&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smart_trackingdata</span><span class="p">[</span><span class="s1">&#39;surface_tilt&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ec9e732c70&gt;]
+</pre></div>
+</div>
+<img alt="_images/PVPMC_Problem Based Learning - Solution_18_1.png" src="_images/PVPMC_Problem Based Learning - Solution_18_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">temperature</span><span class="o">.</span><span class="n">TEMPERATURE_MODEL_PARAMETERS</span><span class="p">[</span><span class="s1">&#39;sapm&#39;</span><span class="p">][</span><span class="s1">&#39;open_rack_glass_polymer&#39;</span><span class="p">]</span>
+<span class="n">cell_temperature</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">temperature</span><span class="o">.</span><span class="n">sapm_cell</span><span class="p">(</span><span class="n">array_poa</span><span class="p">,</span>
+                                               <span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;DryBulb&#39;</span><span class="p">],</span>
+                                               <span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;Wspd&#39;</span><span class="p">],</span>
+                                               <span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_poa</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">irradiance</span><span class="o">.</span><span class="n">get_total_irradiance</span><span class="p">(</span><span class="n">surface_tilt</span><span class="o">=</span><span class="n">tracking_angles</span><span class="p">[</span><span class="s1">&#39;tracker_theta&#39;</span><span class="p">],</span>
+                                                       <span class="n">surface_azimuth</span><span class="o">=</span><span class="n">tracking_angles</span><span class="p">[</span><span class="s1">&#39;surface_azimuth&#39;</span><span class="p">],</span>
+                                                       <span class="n">dni</span><span class="o">=</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;DNI&#39;</span><span class="p">],</span>
+                                                       <span class="n">ghi</span><span class="o">=</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;GHI&#39;</span><span class="p">],</span>
+                                                       <span class="n">dhi</span><span class="o">=</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;DHI&#39;</span><span class="p">],</span>
+                                                       <span class="n">solar_zenith</span><span class="o">=</span><span class="n">solar_position</span><span class="p">[</span><span class="s1">&#39;apparent_zenith&#39;</span><span class="p">],</span>
+                                                       <span class="n">solar_azimuth</span><span class="o">=</span><span class="n">solar_position</span><span class="p">[</span><span class="s1">&#39;azimuth&#39;</span><span class="p">])</span>
+<span class="n">array_poa</span> <span class="o">=</span> <span class="n">array_poa</span><span class="p">[</span><span class="s1">&#39;poa_global&#39;</span><span class="p">]</span>  <span class="c1"># Returns various irradiances; we will use the global value at plane of array.</span>
+
+<span class="n">parameters</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">temperature</span><span class="o">.</span><span class="n">TEMPERATURE_MODEL_PARAMETERS</span><span class="p">[</span><span class="s1">&#39;sapm&#39;</span><span class="p">][</span><span class="s1">&#39;open_rack_glass_polymer&#39;</span><span class="p">]</span>
+<span class="n">cell_temperature</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">temperature</span><span class="o">.</span><span class="n">sapm_cell</span><span class="p">(</span><span class="n">array_poa</span><span class="p">,</span>
+                                               <span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;DryBulb&#39;</span><span class="p">],</span>
+                                               <span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;Wspd&#39;</span><span class="p">],</span>
+                                               <span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+
+<span class="n">gamma_pdc</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.004</span>  <span class="c1"># divide by 100 to go from %/°C to 1/°C</span>
+<span class="n">nameplate</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># Watts</span>
+
+<span class="n">array_power</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">pvsystem</span><span class="o">.</span><span class="n">pvwatts_dc</span><span class="p">(</span><span class="n">array_poa</span><span class="p">,</span> <span class="n">cell_temperature</span><span class="p">,</span> <span class="n">nameplate</span><span class="p">,</span> <span class="n">gamma_pdc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_poa2</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">irradiance</span><span class="o">.</span><span class="n">get_total_irradiance</span><span class="p">(</span><span class="n">surface_tilt</span><span class="o">=</span><span class="n">smart_trackingdata</span><span class="p">[</span><span class="s1">&#39;tracker_theta&#39;</span><span class="p">],</span>
+                                                       <span class="n">surface_azimuth</span><span class="o">=</span><span class="n">smart_trackingdata</span><span class="p">[</span><span class="s1">&#39;surface_azimuth&#39;</span><span class="p">],</span>
+                                                       <span class="n">dni</span><span class="o">=</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;DNI&#39;</span><span class="p">],</span>
+                                                       <span class="n">ghi</span><span class="o">=</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;GHI&#39;</span><span class="p">],</span>
+                                                       <span class="n">dhi</span><span class="o">=</span><span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;DHI&#39;</span><span class="p">],</span>
+                                                       <span class="n">solar_zenith</span><span class="o">=</span><span class="n">solar_position</span><span class="p">[</span><span class="s1">&#39;apparent_zenith&#39;</span><span class="p">],</span>
+                                                       <span class="n">solar_azimuth</span><span class="o">=</span><span class="n">solar_position</span><span class="p">[</span><span class="s1">&#39;azimuth&#39;</span><span class="p">])</span>
+<span class="n">array_poa2</span> <span class="o">=</span> <span class="n">array_poa2</span><span class="p">[</span><span class="s1">&#39;poa_global&#39;</span><span class="p">]</span>  <span class="c1"># Returns various irradiances; we will use the global value at plane of array.</span>
+
+
+<span class="n">gamma_pdc</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.004</span>  <span class="c1"># divide by 100 to go from %/°C to 1/°C</span>
+<span class="n">nameplate</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># Watts</span>
+
+
+<span class="n">parameters</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">temperature</span><span class="o">.</span><span class="n">TEMPERATURE_MODEL_PARAMETERS</span><span class="p">[</span><span class="s1">&#39;sapm&#39;</span><span class="p">][</span><span class="s1">&#39;open_rack_glass_polymer&#39;</span><span class="p">]</span>
+<span class="n">cell_temperature2</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">temperature</span><span class="o">.</span><span class="n">sapm_cell</span><span class="p">(</span><span class="n">array_poa2</span><span class="p">,</span>
+                                               <span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;DryBulb&#39;</span><span class="p">],</span>
+                                               <span class="n">df_tmy</span><span class="p">[</span><span class="s1">&#39;Wspd&#39;</span><span class="p">],</span>
+                                               <span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+
+
+
+<span class="n">array_power2</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">pvsystem</span><span class="o">.</span><span class="n">pvwatts_dc</span><span class="p">(</span><span class="n">array_poa2</span><span class="p">,</span> <span class="n">cell_temperature2</span><span class="p">,</span> <span class="n">nameplate</span><span class="p">,</span> <span class="n">gamma_pdc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">array_power2</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">-</span><span class="n">array_power</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">array_power</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.3747064389180358
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "PVSC-Python-Tutorials/PVPMC_2022",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Silvana Ayala Pelaez, Mark Mikofski, Kevin Anderson<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
