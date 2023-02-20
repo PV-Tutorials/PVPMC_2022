@@ -30,7 +30,7 @@ cs_220_mods['objects']
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mHTTPError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2027/4018253398.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_2123/4018253398.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      4[0m     [0;34m'STC__gt'[0m[0;34m:[0m [0;36m219[0m[0;34m,[0m [0;34m'STC__lt'[0m[0;34m:[0m [0;36m221[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      5[0m     'I_sc_ref__lt': 6})
 [0;32m----> 6[0;31m [0;32mwith[0m [0murllib[0m[0;34m.[0m[0mrequest[0m[0;34m.[0m[0murlopen[0m[0;34m([0m[0;34mf'https://pvfree.herokuapp.com/api/v1/cecmodule/?{params}'[0m[0;34m)[0m [0;32mas[0m [0mfp[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
