@@ -24,7 +24,7 @@ meta_dict  # display the dictionary of metadata
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1974/2590221864.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1802/2590221864.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0mDATA_DIR[0m [0;34m=[0m [0mpathlib[0m[0;34m.[0m[0mPath[0m[0;34m([0m[0mpvlib[0m[0;34m.[0m[0m__file__[0m[0;34m)[0m[0;34m.[0m[0mparent[0m [0;34m/[0m [0;34m'data'[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m [0mdf_tmy[0m[0;34m,[0m [0mmeta_dict[0m [0;34m=[0m [0mpvlib[0m[0;34m.[0m[0miotools[0m[0;34m.[0m[0mread_tmy3[0m[0;34m([0m[0mDATA_DIR[0m [0;34m/[0m [0;34m'TMY3_Albuquerque_NM.CSV'[0m[0;34m,[0m [0mcoerce_year[0m[0;34m=[0m[0;36m2017[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mmeta_dict[0m  [0;31m# display the dictionary of metadata[0m[0;34m[0m[0;34m[0m[0m

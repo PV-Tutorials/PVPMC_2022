@@ -28,7 +28,7 @@ solar_position.index += pd.Timedelta('30min')
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1927/2085116350.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1753/2085116350.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      2[0m                                    longitude=metadata['Longitude'])
 [1;32m      3[0m [0;34m[0m[0m
 [0;32m----> 4[0;31m [0mtimes[0m [0;34m=[0m [0mdf_tmy[0m[0;34m.[0m[0mindex[0m [0;34m-[0m [0mpd[0m[0;34m.[0m[0mTimedelta[0m[0;34m([0m[0;34m'30min'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

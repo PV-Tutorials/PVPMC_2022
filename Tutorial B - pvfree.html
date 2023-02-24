@@ -391,12 +391,12 @@ title="Print to PDF"
   <p><img alt="tutorial banner" src="_images/PVLib_PVPMCLogo.PNG" /></p>
 <section class="tex2jax_ignore mathjax_ignore" id="tutorial-b-pvfree">
 <h1>Tutorial B - pvfree<a class="headerlink" href="#tutorial-b-pvfree" title="Permalink to this headline">#</a></h1>
-<p>Another option to get CEC module parameters is to use <a class="reference external" href="https://pvfree.herokuapp.com">pvfree</a>.</p>
+<p>Another option to get CEC module parameters is to use <a class="reference external" href="https://pvfree.azurewebsites.net/">pvfree</a>.</p>
 <div class="alert alert-block alert-info">
-<b>Let's Explore:</b> <a href='https://pvfree.herokuapp.com'> Click here to see the pvfree Website</a></div>
+<b>Let's Explore:</b> <a href='https://pvfree.azurewebsites.net/'> Click here to see the pvfree Website</a></div>
 <p><img alt="pvfree_table" src="_images/pvfree_table.png" /></p>
-<p>You can search the table of the <a class="reference external" href="https://pvfree.herokuapp.com/cec_modules/">CEC modules</a>. Once you find the desired module, you can get a JSON dictionary of the CEC module parameters from the API. For example, <a class="reference external" href="https://pvfree.herokuapp.com/cec_modules/1733/">Canadian Solar Inc. CS5P-220M</a> can be downloaded from the API here: <a class="reference external" href="https://pvfree.herokuapp.com/api/v1/cecmodule/1733/?format=json">https://pvfree.herokuapp.com/api/v1/cecmodule/1733/?format=json</a>. You can copy and paste or use python to call the API.</p>
-<p>The API also has search filters you can use. For example: <a class="reference external" href="https://pvfree.herokuapp.com/api/v1/cecmodule/?format=json&amp;Name__istartswith=canadian&amp;STC__gt=219&amp;STC__lt=221">https://pvfree.herokuapp.com/api/v1/cecmodule/?format=json&amp;Name__istartswith=canadian&amp;STC__gt=219&amp;STC__lt=221</a> searches for all modules starting with “canadian” and with nameplate between 219-W and 221-W which returns a list of 6 modules in a JSON dictionary. Limiting the short circuit currentl (Isc) to less than 6-A reduces this list to 2 modules.</p>
+<p>You can search the table of the <a class="reference external" href="https://pvfree.azurewebsites.net/cec_modules/">CEC modules</a>. Once you find the desired module, you can get a JSON dictionary of the CEC module parameters from the API. For example, <a class="reference external" href="https://pvfree.azurewebsites.net/cec_modules/1733/">Canadian Solar Inc. CS5P-220M</a> can be downloaded from the API here: <a class="reference external" href="https://pvfree.azurewebsites.net/api/v1/cecmodule/1733/?format=json">https://pvfree.azurewebsites.net/api/v1/cecmodule/1733/?format=json</a>. You can copy and paste or use python to call the API.</p>
+<p>The API also has search filters you can use. For example: <a class="reference external" href="https://pvfree.azurewebsites.net/api/v1/cecmodule/?format=json&amp;Name__istartswith=canadian&amp;STC__gt=219&amp;STC__lt=221">https://pvfree.azurewebsites.net/api/v1/cecmodule/?format=json&amp;Name__istartswith=canadian&amp;STC__gt=219&amp;STC__lt=221</a> searches for all modules starting with “canadian” and with nameplate between 219-W and 221-W which returns a list of 6 modules in a JSON dictionary. Limiting the short circuit currentl (Isc) to less than 6-A reduces this list to 2 modules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if running on google colab, uncomment the next line and execute this cell to install the dependencies and prevent &quot;ModuleNotFoundError&quot; in later cells:</span>
@@ -412,7 +412,7 @@ title="Print to PDF"
     <span class="s1">&#39;Name__istartswith&#39;</span><span class="p">:</span> <span class="s1">&#39;canadian&#39;</span><span class="p">,</span>
     <span class="s1">&#39;STC__gt&#39;</span><span class="p">:</span> <span class="mi">219</span><span class="p">,</span> <span class="s1">&#39;STC__lt&#39;</span><span class="p">:</span> <span class="mi">221</span><span class="p">,</span>
     <span class="s1">&#39;I_sc_ref__lt&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">})</span>
-<span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;https://pvfree.herokuapp.com/api/v1/cecmodule/?</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;https://pvfree.azurewebsites.net/api/v1/cecmodule/?</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
     <span class="n">cs_220_mods</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total count of Canadian Solar 220-W with Isc &lt; 6A: </span><span class="si">{</span><span class="n">cs_220_mods</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;total_count&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">cs_220_mods</span><span class="p">[</span><span class="s1">&#39;objects&#39;</span><span class="p">]</span>
@@ -420,58 +420,69 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2123</span><span class="o">/</span><span class="mf">4018253398.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s1">&#39;STC__gt&#39;</span><span class="p">:</span> <span class="mi">219</span><span class="p">,</span> <span class="s1">&#39;STC__lt&#39;</span><span class="p">:</span> <span class="mi">221</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s1">&#39;I_sc_ref__lt&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">})</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;https://pvfree.herokuapp.com/api/v1/cecmodule/?</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">cs_220_mods</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total count of Canadian Solar 220-W with Isc &lt; 6A: </span><span class="si">{</span><span class="n">cs_220_mods</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;total_count&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/urllib/request.py</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
-<span class="ne">--&gt; </span><span class="mi">222</span>     <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> 
-<span class="g g-Whitespace">    </span><span class="mi">224</span> <span class="k">def</span> <span class="nf">install_opener</span><span class="p">(</span><span class="n">opener</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/urllib/request.py</span> in <span class="ni">open</span><span class="nt">(self, fullurl, data, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">529</span>         <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
-<span class="g g-Whitespace">    </span><span class="mi">530</span>             <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">531</span>             <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">532</span> 
-<span class="g g-Whitespace">    </span><span class="mi">533</span>         <span class="k">return</span> <span class="n">response</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/urllib/request.py</span> in <span class="ni">http_response</span><span class="nt">(self, request, response)</span>
-<span class="g g-Whitespace">    </span><span class="mi">639</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">640</span>             <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">641</span>                 <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">642</span> 
-<span class="g g-Whitespace">    </span><span class="mi">643</span>         <span class="k">return</span> <span class="n">response</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/urllib/request.py</span> in <span class="ni">error</span><span class="nt">(self, proto, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">567</span>         <span class="k">if</span> <span class="n">http_err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span>             <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;http_error_default&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">orig_args</span>
-<span class="ne">--&gt; </span><span class="mi">569</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">570</span> 
-<span class="g g-Whitespace">    </span><span class="mi">571</span> <span class="c1"># XXX probably also want an abstract factory that knows when it makes</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/urllib/request.py</span> in <span class="ni">_call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span>             <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">503</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span>             <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span>                 <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/urllib/request.py</span> in <span class="ni">http_error_default</span><span class="nt">(self, req, fp, code, msg, hdrs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span> <span class="k">class</span> <span class="nc">HTTPDefaultErrorHandler</span><span class="p">(</span><span class="n">BaseHandler</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">648</span>     <span class="k">def</span> <span class="nf">http_error_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">649</span>         <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span> 
-<span class="g g-Whitespace">    </span><span class="mi">651</span> <span class="k">class</span> <span class="nc">HTTPRedirectHandler</span><span class="p">(</span><span class="n">BaseHandler</span><span class="p">):</span>
-
-<span class="ne">HTTPError</span>: HTTP Error 404: Not Found
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total count of Canadian Solar 220-W with Isc &lt; 6A: 2
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;A_c&#39;: 1.7,
+  &#39;Adjust&#39;: 8.619516,
+  &#39;BIPV&#39;: False,
+  &#39;Bifacial&#39;: False,
+  &#39;Date&#39;: &#39;2018-11-04&#39;,
+  &#39;I_L_ref&#39;: 5.11426,
+  &#39;I_mp_ref&#39;: 4.69,
+  &#39;I_o_ref&#39;: 8.102508e-10,
+  &#39;I_sc_ref&#39;: 5.1,
+  &#39;Length&#39;: 1.602,
+  &#39;N_s&#39;: 96,
+  &#39;Name&#39;: &#39;Canadian Solar Inc. CS5P-220M&#39;,
+  &#39;PTC&#39;: 200.1,
+  &#39;R_s&#39;: 1.066023,
+  &#39;R_sh_ref&#39;: 381.254425,
+  &#39;STC&#39;: 219.961,
+  &#39;T_NOCT&#39;: 42.4,
+  &#39;Technology&#39;: &#39;Mono-c-Si&#39;,
+  &#39;V_mp_ref&#39;: 46.9,
+  &#39;V_oc_ref&#39;: 59.4,
+  &#39;Version&#39;: &#39;SAM 2018.10.29&#39;,
+  &#39;Width&#39;: 1.061,
+  &#39;a_ref&#39;: 2.635926,
+  &#39;alpha_sc&#39;: 0.004539,
+  &#39;beta_oc&#39;: -0.222156,
+  &#39;created_on&#39;: &#39;2019-02-12&#39;,
+  &#39;gamma_r&#39;: -0.476,
+  &#39;id&#39;: 1733,
+  &#39;modified_on&#39;: &#39;2019-02-12&#39;,
+  &#39;resource_uri&#39;: &#39;/api/v1/cecmodule/1733/&#39;},
+ {&#39;A_c&#39;: 1.639,
+  &#39;Adjust&#39;: 2.227195,
+  &#39;BIPV&#39;: False,
+  &#39;Bifacial&#39;: False,
+  &#39;Date&#39;: &#39;2018-11-04&#39;,
+  &#39;I_L_ref&#39;: 5.05607,
+  &#39;I_mp_ref&#39;: 4.73,
+  &#39;I_o_ref&#39;: 9.957448e-11,
+  &#39;I_sc_ref&#39;: 5.05,
+  &#39;Length&#39;: 1.579,
+  &#39;N_s&#39;: 96,
+  &#39;Name&#39;: &#39;Canadian Solar Inc. CS5P-220P&#39;,
+  &#39;PTC&#39;: 193.1,
+  &#39;R_s&#39;: 1.00467,
+  &#39;R_sh_ref&#39;: 835.904785,
+  &#39;STC&#39;: 220.418,
+  &#39;T_NOCT&#39;: 51.4,
+  &#39;Technology&#39;: &#39;Multi-c-Si&#39;,
+  &#39;V_mp_ref&#39;: 46.6,
+  &#39;V_oc_ref&#39;: 58.3,
+  &#39;Version&#39;: &#39;SAM 2018.10.29&#39;,
+  &#39;Width&#39;: 1.038,
+  &#39;a_ref&#39;: 2.366377,
+  &#39;alpha_sc&#39;: 0.0025,
+  &#39;beta_oc&#39;: -0.196588,
+  &#39;created_on&#39;: &#39;2019-02-12&#39;,
+  &#39;gamma_r&#39;: -0.43,
+  &#39;id&#39;: 1734,
+  &#39;modified_on&#39;: &#39;2019-02-12&#39;,
+  &#39;resource_uri&#39;: &#39;/api/v1/cecmodule/1734/&#39;}]
 </pre></div>
 </div>
 </div>
